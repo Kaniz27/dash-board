@@ -1,0 +1,84 @@
+[
+  {
+    "id": 1,
+    "name": "Cody Fisher",
+    "avatar": "https://randomuser.me/api/portraits/men/32.jpg",
+    "lastMessage": "Hey! Can you review ",
+    "time": "Fri 3:30 PM",
+    "active": true,
+    "messages": [
+      { "from": "them", "text": "Hey! Can you review the dashboard for me?", "time": "Fri 3:30 PM" },
+      { "from": "me", "text": "Sure, I’ll check the dashboard now.", "time": "Fri 3:45 PM" },
+      { "from": "them", "text": "It will growth is coming from.", "time": "Fri 4:00 PM" },
+      { "from": "me", "text": "Got it. I’ll add a detailed table for platform engagement and update the charts.", "time": "Fri 4:15 PM" },
+      { "from": "them", "text": "Perfect! Can you also check the forecast section?", "time": "Fri 4:30 PM" },
+      { "from": "me", "text": "Yes, I’ll update the forecast tonight and send you the revised draft by tomorrow morning.", "time": "Fri 4:45 PM" },
+      { "from": "them", "text": "Great! Also, please prepare the slides for the team presentation.", "time": "Fri 5:00 PM" },
+      { "from": "me", "text": "Understood. I’ll make sure the slides match the dashboard visuals and highlight the key metrics.", "time": "Fri 5:15 PM" },
+      { "from": "them", "text": "Thanks! Don’t forget to include last month’s summary for context, and add the client feedback section after the key metrics.", "time": "Fri 5:30 PM" },
+      { "from": "me", "text": "Will do. Everything will be ready before the meeting tomorrow.", "time": "Fri 5:45 PM" }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Eleanor Pena",
+    "avatar": "https://randomuser.me/api/portraits/women/44.jpg",
+    "lastMessage": "Project deadline feedback requested.",
+    "time": "4:30 PM",
+    "active": false,
+    "messages": [
+      { "from": "them", "text": "Project deadline feedback requested.", "time": "4:30 PM" },
+      { "from": "me", "text": "Noted, will update.", "time": "4:45 PM" },
+      { "from": "them", "text": "Ensure timeline is feasible.", "time": "5:00 PM" }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Jacob Jones",
+    "avatar": "https://randomuser.me/api/portraits/men/45.jpg",
+    "lastMessage": "Monthly report needs approval.",
+    "time": "12:15 PM",
+    "active": false,
+    "messages": [
+      { "from": "them", "text": "Monthly report needs approval.", "time": "12:15 PM" },
+      { "from": "me", "text": "I’ll review and send feedback.", "time": "12:30 PM" }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Esther Howard",
+    "avatar": "https://randomuser.me/api/portraits/women/50.jpg",
+    "lastMessage": "Client feedback update.",
+    "time": "Yesterday",
+    "active": false,
+    "messages": [
+      { "from": "them", "text": "Client feedback update.", "time": "Yesterday" },
+      { "from": "me", "text": "Thanks! I’ll analyze.", "time": "Yesterday" }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Jenny Wilson",
+    "avatar": "https://randomuser.me/api/portraits/women/51.jpg",
+    "lastMessage": "Sent updated designs for review.",
+    "time": "25 Aug",
+    "active": false,
+    "messages": [
+      { "from": "them", "text": "Sent updated designs for review.", "time": "25 Aug" },
+      { "from": "me", "text": "Received, reviewing now.", "time": "25 Aug" },
+      { "from": "them", "text": "Please provide comments.", "time": "25 Aug" }
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Kristin Watson",
+    "avatar": "https://randomuser.me/api/portraits/women/52.jpg",
+    "lastMessage": "Shared notes on last meeting.",
+    "time": "25 Aug",
+    "active": false,
+    "messages": [
+      { "from": "them", "text": "Shared notes on last meeting.", "time": "25 Aug" },
+      { "from": "me", "text": "Thanks, I’ll review.", "time": "25 Aug" }
+    ]
+  }
+]

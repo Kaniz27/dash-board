@@ -10,7 +10,8 @@ import Calender from "./Components/Calendar";
 import Email from "./Components/Email";
 
 import ChatList from "./Components/ChatList";
-import Ecommrece from "./Components/DashBoard/DashBoard";
+
+import DashBoard from "./Components/DashBoard/DashBoard";
 
 const router = createBrowserRouter([
   {
@@ -23,8 +24,8 @@ const router = createBrowserRouter([
       },
 
       {
-        path: "dashboard",
-        element: <Ecommrece></Ecommrece>,
+        path: "dashboard/main",
+        element: <DashBoard></DashBoard>,
       },
       {
         path: "hospital",

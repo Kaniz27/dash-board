@@ -1,0 +1,58 @@
+[
+  {
+    "name": "Facebook",
+    "orders": "15.2k Orders",
+    "progress": 55,
+    "status": "Top Seller",
+    "icon": "FaFacebookF"
+  },
+  {
+    "name": "Instagram",
+    "orders": "12.8k Orders",
+    "progress": 48,
+    "status": "Trending",
+    "icon": "FaInstagram"
+  },
+  {
+    "name": "Twitter",
+    "orders": "9.5k Orders",
+    "progress": 35,
+    "status": "Fast Growth",
+    "icon": "FaTwitter"
+  },
+  {
+    "name": "LinkedIn",
+    "orders": "6.7k Orders",
+    "progress": 28,
+    "status": "Growing",
+    "icon": "FaLinkedinIn"
+  },
+  {
+    "name": "YouTube",
+    "orders": "18.3k Orders",
+    "progress": 60,
+    "status": "Hot",
+    "icon": "FaYoutube"
+  },
+  {
+    "name": "WhatsApp",
+    "orders": "10.4k Orders",
+    "progress": 42,
+    "status": "Active",
+    "icon": "FaWhatsapp"
+  },
+  {
+    "name": "WeChat",
+    "orders": "8.9k Orders",
+    "progress": 33,
+    "status": "Popular",
+    "icon": "FaWeixin"
+  },
+  {
+    "name": "Pinterest",
+    "orders": "7.3k Orders",
+    "progress": 30,
+    "status": "Rising",
+    "icon": "FaPinterest"
+  }
+]

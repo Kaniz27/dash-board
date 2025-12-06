@@ -1,6 +1,6 @@
-// EmailPage.jsx
 import React, { useState } from "react";
 import Sidebar from "./Sidebar";
+import Header from "./Header";
 import { FaInbox, FaStar, FaPaperPlane, FaFileAlt, FaTrash } from "react-icons/fa";
 
 export default function EmailPage() {
@@ -73,66 +73,68 @@ export default function EmailPage() {
   return (
     <div className="flex h-screen bg-gray-50">
 
-      {/* Sidebar */}
-      <Sidebar />
+      {/* Fixed Sidebar */}
+      <div className="w-64 fixed left-0 top-0 bottom-0 bg-white shadow-lg z-10">
+        <Sidebar />
+      </div>
 
       {/* Main Content */}
-      <div className="flex-1 p-6 flex gap-6">
+      <div className="flex-1 ml-64 flex flex-col overflow-hidden">
 
-        {/* Left Mailboxes & Folders */}
-        <div className="w-[30%] bg-white p-4 rounded-lg shadow flex flex-col gap-6">
-          <h2 className="text-xl font-bold">Mailboxes</h2>
-          <div className="flex flex-col gap-2">
-            {mailboxes.map((box, idx) => (
-              <div
-                key={idx}
-                className="flex justify-between items-center p-2 rounded hover:bg-violet-50 cursor-pointer"
-              >
-                <div className="flex items-center gap-2">{box.icon}<span>{box.name}</span></div>
-                <span className="text-sm bg-purple-100 text-purple-700 px-2 py-0.5 rounded">{box.count}</span>
-              </div>
-            ))}
-          </div>
+        {/* Header above Inbox */}
+        <Header />
 
-          <h2 className="text-xl font-bold mt-4">Folders</h2>
-          <div className="flex flex-col gap-2">
-            {folders.map((folder, idx) => (
-              <div
-                key={idx}
-                className="flex justify-between items-center p-2 rounded hover:bg-violet-50 cursor-pointer"
-              >
-                <span>{folder.name}</span>
-                <span className="text-sm bg-purple-100 text-purple-700 px-2 py-0.5 rounded">{folder.count}</span>
-              </div>
-            ))}
-          </div>
-        </div>
+        {/* Inbox & Mailboxes */}
+        <div className="flex-1 p-6 flex gap-6 overflow-y-auto">
 
-        {/* Right Inbox */}
-        <div className="w-[70%] flex flex-col gap-4">
-          <h2 className="text-xl font-bold">Inbox ({inbox.length} messages)</h2>
-          <div className="bg-white rounded-lg shadow p-4 flex flex-col gap-4">
-            {inbox.map((mail, idx) => (
-              <div
-                key={idx}
-                className="flex gap-4 p-3 hover:bg-violet-50 rounded transition"
-              >
-                <img
-                  src={mail.avatar}
-                  className="w-12 h-12 rounded-full"
-                  alt={mail.sender}
-                />
-                <div className="flex-1">
-                  <div className="flex justify-between">
-                    <h3 className="font-semibold">{mail.sender}</h3>
-                    <span className="text-sm text-gray-500">{mail.time}</span>
-                  </div>
-                  <h4 className="text-sm font-medium">{mail.subject}</h4>
-                  <p className="text-gray-600 text-sm">{mail.description}</p>
+          {/* Mailboxes & Folders */}
+          <div className="w-[30%] bg-white p-4 rounded-lg shadow flex flex-col gap-6">
+            <h3 className="text-lg font-bold">Mailboxes</h3>
+            <div className="flex flex-col gap-2">
+              {mailboxes.map((box, idx) => (
+                <div
+                  key={idx}
+                  className="flex justify-between items-center p-2 rounded hover:bg-violet-50 cursor-pointer"
+                >
+                  <div className="flex items-center gap-2">{box.icon}<span>{box.name}</span></div>
+                  <span className="text-sm bg-purple-100 text-purple-700 px-2 py-0.5 rounded">{box.count}</span>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
+
+            <h3 className="text-lg font-bold mt-4">Folders</h3>
+            <div className="flex flex-col gap-2">
+              {folders.map((folder, idx) => (
+                <div
+                  key={idx}
+                  className="flex justify-between items-center p-2 rounded hover:bg-violet-50 cursor-pointer"
+                >
+                  <span>{folder.name}</span>
+                  <span className="text-sm bg-purple-100 text-purple-700 px-2 py-0.5 rounded">{folder.count}</span>
+                </div>
+              ))}
+            </div>
           </div>
+
+          {/* Inbox */}
+          <div className="w-[70%] flex flex-col gap-4">
+            <div className="bg-white rounded-lg shadow p-4 flex flex-col gap-4">
+              {inbox.map((mail, idx) => (
+                <div key={idx} className="flex gap-4 p-3 hover:bg-violet-50 rounded transition">
+                  <img src={mail.avatar} className="w-12 h-12 rounded-full" alt={mail.sender} />
+                  <div className="flex-1">
+                    <div className="flex justify-between">
+                      <h4 className="font-semibold">{mail.sender}</h4>
+                      <span className="text-sm text-gray-500">{mail.time}</span>
+                    </div>
+                    <h5 className="text-sm font-medium">{mail.subject}</h5>
+                    <p className="text-gray-600 text-sm">{mail.description}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
         </div>
 
       </div>

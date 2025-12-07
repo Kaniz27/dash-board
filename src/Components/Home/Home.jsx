@@ -1,21 +1,12 @@
-import React from 'react';
-import Sidebar from '../Sidebar';
-// import ChatList from '../ChatList';
-
-import ProfilePanel from '../ProfilePanel';
-import Footer from '../Footer';
-
+import React from "react";
+import DashBoard from "../DashBoard/DashBoard";
 
 const Home = () => {
-    return (
-        <div className='flex'>
-           <Sidebar></Sidebar>
-           <Footer></Footer>
-           {/* <ChatList></ChatList> */}
-          {/* <ProfilePanel></ProfilePanel> */}
-          
-        </div>
-    );
+  return (
+    <div >
+      <DashBoard />
+    </div>
+  );
 };
 
 export default Home;

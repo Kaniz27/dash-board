@@ -12,6 +12,8 @@ import Email from "./Components/Email";
 import ChatList from "./Components/ChatList";
 
 import DashBoard from "./Components/DashBoard/DashBoard";
+import Dashboard from "./Components/Sidebar";
+import VoiceAgent from "./Components/Pages/VoiceAgent";
 
 const router = createBrowserRouter([
   {
@@ -28,8 +30,8 @@ const router = createBrowserRouter([
         element: <DashBoard></DashBoard>,
       },
       {
-        path: "hospital",
-        element: <h1>hi</h1>,
+        path: "/aiagent/create",
+        element: <VoiceAgent></VoiceAgent>,
       },
       {
         path: "products",

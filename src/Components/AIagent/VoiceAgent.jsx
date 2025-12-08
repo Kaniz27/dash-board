@@ -12,8 +12,6 @@ export default function VoiceAgent() {
   const [voice, setVoice] = useState("Callum (en)");
   const [language, setLanguage] = useState("English (United States)");
   const [agentEnabled, setAgentEnabled] = useState(false);
-  const [showTranscript, setShowTranscript] = useState(false);
-
 
   const [primaryColor, setPrimaryColor] = useState("#01cdcc");
   const [secondaryColor, setSecondaryColor] = useState("#006766");
@@ -37,7 +35,6 @@ export default function VoiceAgent() {
       voice,
       language,
       agentEnabled,
-      showTranscript,
       themeColors: {
         primaryColor,
         secondaryColor,
@@ -55,6 +52,7 @@ export default function VoiceAgent() {
   };
 
   const handleGeneratePrompt = () => {
+    if (!intentText.trim()) return;
     const generated = `System Prompt based on: ${intentText}`;
     setSystemPrompt(generated);
     setShowModal(false);
@@ -66,7 +64,7 @@ export default function VoiceAgent() {
       <Sidebar />
 
       <div className="flex-1 ml-64 p-6">
-        <div className="max-w-5xl mx-auto bg-white shadow-lg rounded-xl p-8 space-y-6">
+        <div className="max-w-5xl mx-auto bg-white shadow-lg rounded-xl p-8 space-y-6 border border-gray-200">
           <h1 className="text-3xl font-bold text-gray-800">Create Agent</h1>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -78,7 +76,7 @@ export default function VoiceAgent() {
                 type="text"
                 value={assistantName}
                 onChange={(e) => setAssistantName(e.target.value)}
-                className="w-full p-1 rounded-lg border bg-gray-50"
+                className="w-full p-2 rounded-lg border border-gray-200 bg-gray-50"
               />
             </label>
 
@@ -88,7 +86,7 @@ export default function VoiceAgent() {
               <select
                 value={firstMessageMode}
                 onChange={(e) => setFirstMessageMode(e.target.value)}
-                className="w-full p-1 rounded-lg border bg-gray-50"
+                className="w-full p-2 rounded-lg border border-gray-200 bg-gray-50"
               >
                 <option>Assistant speaks first</option>
                 <option>User speaks first</option>
@@ -101,13 +99,13 @@ export default function VoiceAgent() {
               <textarea
                 value={firstMessage}
                 onChange={(e) => setFirstMessage(e.target.value)}
-                className="w-full p-3 rounded-lg border bg-gray-50 resize-none"
+                className="w-full p-3 rounded-lg border border-gray-200 bg-gray-50 resize-none"
                 rows={3}
               />
             </label>
 
             {/* System Prompt */}
-            <label className="md:col-span-2  flex flex-col">
+            <label className="md:col-span-2 flex flex-col">
               <span className="flex mb-2 justify-between items-center font-medium text-gray-700">
                 System Prompt
                 <button
@@ -121,20 +119,19 @@ export default function VoiceAgent() {
               <textarea
                 value={systemPrompt}
                 onChange={(e) => setSystemPrompt(e.target.value)}
-                className="w-full p-4 rounded-lg border bg-gray-50 resize-none"
+                className="w-full p-4 rounded-lg border border-gray-200 bg-gray-50 resize-none"
                 rows={5}
               />
             </label>
 
-   
+            {/* Voice, Language, Enabled */}
             <div className="md:col-span-2 grid grid-cols-1 md:grid-cols-3 gap-6">
-
               <label className="flex flex-col">
                 <span className="mb-2 font-medium text-gray-700">Voice</span>
                 <select
                   value={voice}
                   onChange={(e) => setVoice(e.target.value)}
-                  className="w-full p-1 rounded-lg border bg-gray-50"
+                  className="w-full p-2 rounded-lg border border-gray-200 bg-gray-50"
                 >
                   <option>Callum (en)</option>
                   <option>Olivia (en)</option>
@@ -146,7 +143,7 @@ export default function VoiceAgent() {
                 <select
                   value={language}
                   onChange={(e) => setLanguage(e.target.value)}
-                  className="w-full p-1 rounded-lg border bg-gray-50"
+                  className="w-full p-2 rounded-lg border border-gray-200 bg-gray-50"
                 >
                   <option>English (United States)</option>
                   <option>Spanish (Spain)</option>
@@ -158,22 +155,21 @@ export default function VoiceAgent() {
                   type="checkbox"
                   checked={agentEnabled}
                   onChange={(e) => setAgentEnabled(e.target.checked)}
+                  className="border border-gray-200"
                 />
                 <span className="font-medium text-gray-700">Agent Enabled</span>
               </label>
-
             </div>
 
-           
+            {/* Theme Colors */}
             <div className="md:col-span-2 grid grid-cols-1 md:grid-cols-3 gap-6">
-
               <label className="flex flex-col">
                 <span className="mb-2 font-medium text-gray-700">Primary Color</span>
                 <input
                   type="color"
                   value={primaryColor}
                   onChange={(e) => setPrimaryColor(e.target.value)}
-                  className="w-12 h-8 border rounded"
+                  className="w-12 h-8 border border-gray-200 rounded"
                 />
               </label>
 
@@ -183,7 +179,7 @@ export default function VoiceAgent() {
                   type="color"
                   value={secondaryColor}
                   onChange={(e) => setSecondaryColor(e.target.value)}
-                  className="w-12 h-8 border rounded"
+                  className="w-12 h-8 border border-gray-200 rounded"
                 />
               </label>
 
@@ -193,10 +189,9 @@ export default function VoiceAgent() {
                   type="color"
                   value={accentColor}
                   onChange={(e) => setAccentColor(e.target.value)}
-                  className="w-12 h-8 border rounded"
+                  className="w-12 h-8 border border-gray-200 rounded"
                 />
               </label>
-
             </div>
 
             {/* Keywords */}
@@ -206,7 +201,7 @@ export default function VoiceAgent() {
                 type="text"
                 value={keywords}
                 onChange={(e) => setKeywords(e.target.value)}
-                className="w-full p-1 rounded-lg border bg-gray-50"
+                className="w-full p-2 rounded-lg border border-gray-200 bg-gray-50"
               />
             </label>
 
@@ -216,7 +211,7 @@ export default function VoiceAgent() {
               <textarea
                 value={crisisPrompt}
                 onChange={(e) => setCrisisPrompt(e.target.value)}
-                className="w-full p-1 rounded-lg border bg-gray-50 resize-none"
+                className="w-full p-2 rounded-lg border border-gray-200 bg-gray-50 resize-none"
                 rows={3}
               />
             </label>
@@ -227,7 +222,7 @@ export default function VoiceAgent() {
               <textarea
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
-                className="w-full p-1 rounded-lg border bg-gray-50 resize-none"
+                className="w-full p-2 rounded-lg border border-gray-200 bg-gray-50 resize-none"
                 rows={1}
               />
             </label>
@@ -239,7 +234,7 @@ export default function VoiceAgent() {
                 type="text"
                 value={avatarURL}
                 onChange={(e) => setAvatarURL(e.target.value)}
-                className="w-full p-1 rounded-lg border bg-gray-50"
+                className="w-full p-2 rounded-lg border border-gray-200 bg-gray-50"
               />
             </label>
 
@@ -249,7 +244,7 @@ export default function VoiceAgent() {
               <textarea
                 value={configJSON}
                 onChange={(e) => setConfigJSON(e.target.value)}
-                className="w-full p-3 rounded-lg border bg-gray-50 font-mono resize-none"
+                className="w-full p-3 rounded-lg border border-gray-200 bg-gray-50 font-mono resize-none"
                 rows={6}
               />
             </label>
@@ -266,21 +261,21 @@ export default function VoiceAgent() {
           {/* Modal */}
           {showModal && (
             <div className="fixed inset-0 bg-black bg-opacity-40 flex items-center justify-center z-50">
-              <div className="bg-white p-6 rounded-xl shadow-xl w-96 space-y-4">
+              <div className="bg-white p-6 rounded-xl shadow-xl w-96 space-y-4 border border-gray-200">
                 <h2 className="text-xl font-bold text-gray-800">Generate System Prompt</h2>
 
                 <textarea
                   value={intentText}
                   onChange={(e) => setIntentText(e.target.value)}
                   placeholder="Describe your intent"
-                  className="w-full p-3 border rounded-lg resize-none"
+                  className="w-full p-3 border border-gray-200 rounded-lg resize-none"
                   rows={4}
                 />
 
                 <div className="flex justify-end gap-3">
                   <button
                     onClick={() => setShowModal(false)}
-                    className="px-4 py-2 rounded-lg border"
+                    className="px-4 py-2 rounded-lg border border-gray-200"
                   >
                     Cancel
                   </button>
@@ -295,7 +290,6 @@ export default function VoiceAgent() {
               </div>
             </div>
           )}
-
         </div>
       </div>
     </div>

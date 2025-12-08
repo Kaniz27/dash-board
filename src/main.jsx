@@ -13,7 +13,15 @@ import ChatList from "./Components/ChatList";
 
 import DashBoard from "./Components/DashBoard/DashBoard";
 import Dashboard from "./Components/Sidebar";
-import VoiceAgent from "./Components/Pages/VoiceAgent";
+import VoiceAgent from "./Components/AIagent/VoiceAgent";
+import VoiceLibrary from "./Components/AIagent/VoiceLibrary";
+import UnPublished from "./Components/AIagent/UnPublished";
+import Published from "./Components/AIagent/Published";
+import SystemTrained from "./Components/AIagent/SystemTrained";
+import BuyNumber from "./Components/Number/BuyNumber";
+import ActiveNumber from "./Components/Number/ActiveNumber";
+import SIPRegistration from "./Components/Number/SIPRegistration";
+import CallGeneration from "./Components/Number/CallGeneration";
 
 const router = createBrowserRouter([
   {
@@ -24,30 +32,57 @@ const router = createBrowserRouter([
         index: true,
         element: <Home></Home>,
       },
-
+{
+        path: "dashboard",
+        element: <DashBoard></DashBoard>,
+      },
       {
         path: "dashboard/main",
         element: <DashBoard></DashBoard>,
+      },
+      {
+        path: "/aiagent",
+        element: <VoiceAgent></VoiceAgent>,
       },
       {
         path: "/aiagent/create",
         element: <VoiceAgent></VoiceAgent>,
       },
       {
-        path: "products",
-        element: <ProductList></ProductList>,
+        path: "/aiagent/voice-library",
+        element: <VoiceLibrary></VoiceLibrary>,
       },
       {
-        path: "chat",
-        element: <ChatList></ChatList>,
+        path: "/aiagent/unpublished",
+        element: <UnPublished></UnPublished>,
       },
       {
-        path: "calendar",
-        element: <Calender></Calender>,
+        path: "/aiagent/published",
+        element:<Published></Published>,
       },
       {
-        path: "email",
-        element: <Email></Email>,
+        path: "/aiagent/system-trained",
+        element:<SystemTrained></SystemTrained>,
+      },
+      {
+        path: "/number",
+        element:<BuyNumber></BuyNumber>,
+      },
+      {
+        path: "/number/buy",
+        element:<BuyNumber></BuyNumber>,
+      },
+      {
+        path: "/number/active",
+        element:<ActiveNumber></ActiveNumber>,
+      },
+      {
+        path: "/number/sip",
+        element:<SIPRegistration></SIPRegistration>,
+      },
+      {
+        path: "/number/call",
+        element:<CallGeneration></CallGeneration>,
       },
     ],
   },

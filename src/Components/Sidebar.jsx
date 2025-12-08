@@ -51,8 +51,9 @@ export default function Dashboard() {
           icon: <FaRobot />,
           path: "/aiagent",
           children: [
+             { name: "Create Agent", icon: <FaRobot />, path: "/aiagent/create" },
             { name: "Voice Library", icon: <FaComments />, path: "/aiagent/voice-library" },
-            { name: "Create Agent", icon: <FaRobot />, path: "/aiagent/create" },
+           
             { name: "UnPublished Agent", icon: <FaRobot />, path: "/aiagent/unpublished" },
             { name: "Published Agent", icon: <FaRobot />, path: "/aiagent/published" },
             { name: "System Trained", icon: <FaRobot />, path: "/aiagent/system-trained" },
@@ -69,7 +70,7 @@ export default function Dashboard() {
           path: "/number",
           children: [
             { name: "Active Number", icon: <FaPhoneAlt />, path: "/number/active" },
-            { name: "By Number", icon: <FaPhoneAlt />, path: "/number/by" },
+            { name: "Buy Number", icon: <FaPhoneAlt />, path: "/number/buy" },
             { name: "SIP Registration", icon: <FaClipboardList />, path: "/number/sip" },
             { name: "Call Generation", icon: <FaPhoneAlt />, path: "/number/call" },
           ],

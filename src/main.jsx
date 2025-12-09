@@ -22,6 +22,22 @@ import BuyNumber from "./Components/Number/BuyNumber";
 import ActiveNumber from "./Components/Number/ActiveNumber";
 import SIPRegistration from "./Components/Number/SIPRegistration";
 import CallGeneration from "./Components/Number/CallGeneration";
+import Logout from "./Components/Logout/Logout";
+import Login from "./Components/Layout/Login";
+import SocialSIdebar from'./Components/SocialMedia/SocialSidebar'
+import PostGeneration from "./Components/SocialMedia/PostGeneration";
+import Chatbot from "./Components/SocialMedia/Chatbot";
+import SocialComments from "./Components/SocialMedia/SocialComments";
+import OrderList from "./Components/Order/OrderList";
+import OrderConfirm from "./Components/Order/OrderConfirm";
+import OrderCancel from "./Components/Order/OrderCancel";
+import Profile from "./Components/Profile/Profile";
+import Users from "./Components/Profile/Users";
+import Couriarlist from "./Components/Courier/Couriarlist";
+import CourierBooking from "./Components/Courier/CourierBooking";
+import Tracking from "./Components/Courier/Tracking";
+import Refund from "./Components/Courier/Refund";
+
 
 const router = createBrowserRouter([
   {
@@ -64,6 +80,7 @@ const router = createBrowserRouter([
         path: "/aiagent/system-trained",
         element:<SystemTrained></SystemTrained>,
       },
+      // number
       {
         path: "/number",
         element:<BuyNumber></BuyNumber>,
@@ -83,6 +100,85 @@ const router = createBrowserRouter([
       {
         path: "/number/call",
         element:<CallGeneration></CallGeneration>,
+      },
+      // social media
+      {
+        path: "/socialmedia/post",
+        element:<PostGeneration></PostGeneration>,
+      },
+      {
+        path: "/socialmedia/add",
+        element:<SocialSIdebar></SocialSIdebar>,
+      },
+      {
+        path: "/socialmedia/post",
+        element:<PostGeneration></PostGeneration>,
+      },
+      {
+        path: "socialmedia/chatbot",
+        element:<Chatbot></Chatbot>,
+      },
+      {
+        path: "socialmedia/comments",
+        element:<SocialComments></SocialComments>,
+      },
+      {
+        path: "/socialmedia/call",
+        element:<CallGeneration></CallGeneration>,
+      },
+      // orderlist
+       {
+        path: "/orders/list",
+        element:<OrderList></OrderList>
+      },
+       {
+        path: "/orders/confirm/:orderId",
+        element:<OrderConfirm></OrderConfirm>,
+      },
+       {
+        path: "Reject/Cancel Order",
+        element:<OrderCancel></OrderCancel>
+       },
+      //  payment
+      {
+        path: "/courier/list",
+        element:<Couriarlist></Couriarlist>,
+       },
+       {
+        path: "/courier/list",
+        element:<Couriarlist></Couriarlist>,
+       },
+       {
+        path: "/courier/:courierId/bookings",
+        element:<CourierBooking></CourierBooking>
+       },
+       {
+        path: "/courier/${c.id}/bookings",
+        element:<Tracking></Tracking>,
+       },
+       {
+        path: "/courier/refund",
+        element:<Refund></Refund>,
+       },
+
+      //  basic setup
+      {
+        path: "/setup/profile",
+        element:<Profile></Profile>,
+       },
+       {
+        path: "/setup/users",
+        element:<Users></Users>,
+       },
+
+      // logout
+      {
+        path: "/logout",
+        element:<Logout></Logout>,
+      },
+      {
+        path: "/login",
+        element:<Login></Login>,
       },
     ],
   },

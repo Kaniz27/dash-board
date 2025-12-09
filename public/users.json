@@ -1,0 +1,77 @@
+{
+  "status": "success",
+  "status_code": 200,
+  "message": "Users fetched successfully",
+  "data": [
+    {
+      "user_id": 1,
+      "name": "Rahim Uddin",
+      "email": "rahim@example.com",
+      "role": "Admin",
+      "status": "Active"
+    },
+    {
+      "user_id": 2,
+      "name": "Sadia Akter",
+      "email": "sadia@example.com",
+      "role": "Editor",
+      "status": "Active"
+    },
+    {
+      "user_id": 3,
+      "name": "Hasan Ali",
+      "email": "hasan@example.com",
+      "role": "Viewer",
+      "status": "Inactive"
+    },
+    {
+      "user_id": 4,
+      "name": "Mehedi Hasan",
+      "email": "mehedi@example.com",
+      "role": "Editor",
+      "status": "Active"
+    },
+    {
+      "user_id": 5,
+      "name": "Jannat Ara",
+      "email": "jannat@example.com",
+      "role": "Viewer",
+      "status": "Active"
+    },
+    {
+      "user_id": 6,
+      "name": "Tanjim Ahmed",
+      "email": "tanjim@example.com",
+      "role": "Admin",
+      "status": "Inactive"
+    },
+    {
+      "user_id": 7,
+      "name": "Nusrat Jahan",
+      "email": "nusrat@example.com",
+      "role": "Editor",
+      "status": "Active"
+    },
+    {
+      "user_id": 8,
+      "name": "Kamal Hossain",
+      "email": "kamal@example.com",
+      "role": "Viewer",
+      "status": "Active"
+    },
+    {
+      "user_id": 9,
+      "name": "Farzana Mimi",
+      "email": "farzana@example.com",
+      "role": "Admin",
+      "status": "Active"
+    },
+    {
+      "user_id": 10,
+      "name": "Rafiul Islam",
+      "email": "rafiul@example.com",
+      "role": "Editor",
+      "status": "Inactive"
+    }
+  ]
+}

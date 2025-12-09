@@ -1,0 +1,6 @@
+{
+  "bookings": [
+    { "id": "B-001", "courierId": "C-001", "customer": "Rahim Uddin", "status": "Pending", "items": 3 },
+    { "id": "B-002", "courierId": "C-002", "customer": "Sadia Akter", "status": "Shipped", "items": 5 }
+  ]
+}

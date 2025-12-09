@@ -128,7 +128,7 @@ export default function Dashboard() {
           path: "/courier",
           children: [
             { name: "Courier List", icon: <FaTruck />, path: "/courier/list" },
-            { name: "Booking List", icon: <FaTruck />, path: "/courier/booking" },
+            { name: "Booking List", icon: <FaTruck />, path: "/courier/:courierId/bookings" },
             { name: "Tracking", icon: <FaTruck />, path: "/courier/tracking" },
             { name: "Refund List", icon: <FaMoneyBillAlt />, path: "/courier/refund" },
           ],

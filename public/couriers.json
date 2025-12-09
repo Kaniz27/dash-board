@@ -1,0 +1,7 @@
+{
+  "courierList": [
+    { "id": 1, "name": "DHL Express", "phone": "+880170000111", "status": "Active" },
+    { "id": 2, "name": "FedEx", "phone": "+880170000222", "status": "Active" },
+    { "id": 3, "name": "Pathao Courier", "phone": "+880170000333", "status": "Inactive" }
+  ]
+}

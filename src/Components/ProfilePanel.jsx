@@ -1,54 +1,80 @@
 import React from "react";
-import { FiMail, FiPhone } from "react-icons/fi";
-import { FaLinkedin, FaTwitter, FaGithub } from "react-icons/fa";
+import { FaFacebookF, FaTwitter, FaLinkedinIn, FaGithub } from "react-icons/fa";
 
-export default function ProfilePanel() {
+export default function ProfilePanel({ profile }) {
+  if (!profile) return null;
+
   return (
-    <div className="w-70 mx-auto mt-3 bg-violet-200 rounded-xl shadow-lg overflow-hidden  hover:shadow-2xl transition-shadow duration-300">
-      {/* Header / Avatar */}
-      <div className="flex flex-col items-center p-6 bg-violet-100">
+    <div className="w-1/4 bg-white border border-gray-300 p-4 rounded-lg shadow sticky top-6 flex flex-col items-center">
+      
+      {/* Profile Info */}
+      <div className="flex flex-col items-center py-2 ">
         <img
-          className="w-24 h-24 rounded-full border-4 border-white shadow-md"
-          src="https://randomuser.me/api/portraits/men/32.jpg"
-          alt="Cody Fisher"
+          src={profile.avatar}
+          alt={profile.name}
+          className="w-24 h-24 rounded-full mb-2"
         />
-        <h2 className="mt-4 text-xl font-bold text-gray-800">Cody Fisher</h2>
-        <p className="text-gray-600">Software Engineer</p>
+        <h2 className="text-xl font-bold mb-1 text-center">{profile.name}</h2>
+        <p className="text-gray-500 text-sm text-center">{profile.position}</p>
       </div>
 
-      {/* Body */}
-      <div className="p-6 space-y-4">
-        {/* Personal Information */}
-        <div>
-          <h3 className="text-gray-700 font-semibold mb-2">Personal Information:</h3>
-          <div className="flex items-center text-gray-600 mb-1">
-            <FiMail className="mr-2 text-violet-500" /> eleanorpena@gmail.com
-          </div>
-          <div className="flex items-center text-gray-600">
-            <FiPhone className="mr-2 text-violet-500" /> +1 (555) 123-4567
-          </div>
-        </div>
+      <hr className="w-full my-2 border-gray-300" />
 
-        {/* Description */}
-        <div>
-          <h3 className="text-gray-700 font-semibold mb-2">Description:</h3>
-          <p className="text-gray-600">
-            Marketing Manager with 5+ years of experience in digital campaigns, brand strategy, and team leadership.
-          </p>
-        </div>
+      {/* Contact Info */}
+      <div className="flex flex-col items-center gap-2 py-2">
+        <p className="text-gray-700 font-medium text-center">{profile.email}</p>
+        <p className="text-gray-700 font-medium text-center">{profile.phone}</p>
+      </div>
 
-        {/* Social Icons */}
-        <div className="flex justify-center gap-4 mt-4 text-gray-600">
-          <a href="#" className="hover:text-blue-600 transition-colors duration-200">
-            <FaLinkedin className="w-5 h-5"/>
+      <hr className="w-full my-2 border-gray-300" />
+
+      {/* Bio */}
+      <p className="text-gray-600 text-sm text-center py-2">{profile.bio}</p>
+
+      <hr className="w-full my-2 border-gray-300" />
+
+      {/* Social Links */}
+      <div className="flex justify-center gap-4 py-2">
+        {profile.social?.facebook && (
+          <a
+            href={profile.social.facebook}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-600 hover:text-blue-800"
+          >
+            <FaFacebookF size={20} />
           </a>
-          <a href="#" className="hover:text-blue-400 transition-colors duration-200">
-            <FaTwitter className="w-5 h-5"/>
+        )}
+        {profile.social?.twitter && (
+          <a
+            href={profile.social.twitter}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-400 hover:text-blue-600"
+          >
+            <FaTwitter size={20} />
           </a>
-          <a href="#" className="hover:text-gray-800 transition-colors duration-200">
-            <FaGithub className="w-5 h-5"/>
+        )}
+        {profile.social?.linkedin && (
+          <a
+            href={profile.social.linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-700 hover:text-blue-900"
+          >
+            <FaLinkedinIn size={20} />
           </a>
-        </div>
+        )}
+        {profile.social?.github && (
+          <a
+            href={profile.social.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-800 hover:text-black"
+          >
+            <FaGithub size={20} />
+          </a>
+        )}
       </div>
     </div>
   );

@@ -1,8 +1,7 @@
-// ChatPage.jsx
 import React, { useState, useEffect, useRef } from "react";
 import Sidebar from "./Sidebar";
-import { FiSearch, FiCircle, FiPhone, FiVideo, FiSend } from "react-icons/fi";
 import ProfilePanel from "./ProfilePanel";
+import { FiSearch, FiCircle, FiPhone, FiVideo, FiSend } from "react-icons/fi";
 
 export default function ChatPage() {
   const [chats, setChats] = useState([]);
@@ -14,13 +13,25 @@ export default function ChatPage() {
   useEffect(() => {
     fetch("/chat.json")
       .then(res => res.json())
-      .then(data => setChats(data))
+      .then(data => {
+        // data is already array
+        // Add lastMessage and time for each chat
+        const chatsWithLastMessage = data.map(chat => {
+          const lastMsg = chat.messages[chat.messages.length - 1];
+          return {
+            ...chat,
+            lastMessage: lastMsg?.text || "",
+            time: lastMsg?.time || lastMsg?.timestamp || ""
+          };
+        });
+        setChats(chatsWithLastMessage);
+      })
       .catch(err => console.error(err));
   }, []);
 
   const filteredChats = chats.filter(chat =>
     chat.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    chat.lastMessage.toLowerCase().includes(searchTerm.toLowerCase())
+    (chat.lastMessage && chat.lastMessage.toLowerCase().includes(searchTerm.toLowerCase()))
   );
 
   useEffect(() => {
@@ -29,55 +40,81 @@ export default function ChatPage() {
 
   const handleSendMessage = () => {
     if (!newMessage.trim() || !selectedChat) return;
+
+    const message = { from: "me", text: newMessage, time: "Now" };
+
     const updatedChats = chats.map(chat => {
       if (chat.id === selectedChat.id) {
+        const messages = chat.messages ? [...chat.messages, message] : [message];
         return {
           ...chat,
-          messages: [...chat.messages, { from: "me", text: newMessage, time: "Now" }],
+          messages,
           lastMessage: newMessage,
+          time: "Now"
         };
       }
       return chat;
     });
+
     setChats(updatedChats);
     setSelectedChat(prev => ({
       ...prev,
-      messages: [...prev.messages, { from: "me", text: newMessage, time: "Now" }],
+      messages: prev.messages ? [...prev.messages, message] : [message],
       lastMessage: newMessage,
+      time: "Now"
     }));
+
     setNewMessage("");
+
+    // AI reply simulation
+    setTimeout(() => {
+      const aiReply = { from: "them", text: "Got your message!", time: "Now" };
+      const newChats = updatedChats.map(chat => {
+        if (chat.id === selectedChat.id) {
+          const messages = chat.messages ? [...chat.messages, aiReply] : [aiReply];
+          return { ...chat, messages, lastMessage: aiReply.text, time: "Now" };
+        }
+        return chat;
+      });
+      setChats(newChats);
+      setSelectedChat(prev => ({
+        ...prev,
+        messages: prev.messages ? [...prev.messages, aiReply] : [aiReply],
+        lastMessage: aiReply.text,
+        time: "Now"
+      }));
+    }, 1000);
   };
+
+  const otherPerson = selectedChat
+    ? { ...selectedChat, name: selectedChat.name, avatar: selectedChat.avatar }
+    : null;
 
   return (
     <div className="flex h-screen bg-gray-100">
+      <div className="fixed left-0 top-0 h-full">
+        <Sidebar />
+      </div>
 
-      {/* Sidebar */}
-      <Sidebar />
-
-      {/* Main Chat Area */}
-      <div className="flex-1 p-4 flex gap-4">
-
-        {/* Left Panel - Chat List */}
+      <div className="flex-1 ml-64 flex gap-4 p-4">
+        {/* Chat List */}
         <div className="w-2/5 bg-white border border-gray-300 flex flex-col p-4 rounded-lg shadow">
-          {/* Search Bar */}
-          <div className="flex items-center mb-4 bg-violet-200 p-2 rounded">
-            <FiSearch className="mr-2 text-gray-600"/>
+          <div className="flex items-center mb-4 bg-[#01cdcc] p-2 rounded">
+            <FiSearch className="mr-2 text-white" />
             <input
               type="text"
               placeholder="Search..."
-              className="border-none rounded px-2 py-1 w-full focus:outline-none bg-violet-200"
+              className="border-none rounded px-2 py-1 w-full focus:outline-none bg-[#01cdcc] text-white placeholder-white"
               value={searchTerm}
               onChange={e => setSearchTerm(e.target.value)}
             />
           </div>
-
-          {/* Chat List */}
           <div className="flex-1 overflow-y-auto space-y-2">
             {filteredChats.map(chat => (
               <div
                 key={chat.id}
                 className={`flex items-center justify-between p-3 rounded-lg cursor-pointer transition-all duration-200 border-b border-gray-300
-                  ${selectedChat?.id === chat.id ? "bg-violet-200" : "hover:bg-gray-100"}`}
+                  ${selectedChat?.id === chat.id ? "bg-[#01cdcc] text-white" : "hover:bg-gray-100"}`}
                 onClick={() => setSelectedChat(chat)}
               >
                 <div className="flex items-center gap-3">
@@ -100,56 +137,63 @@ export default function ChatPage() {
           </div>
         </div>
 
-        {/* Right Panel - Messenger */}
+        {/* Messenger Panel */}
         <div className="w-3/5 flex flex-col bg-white rounded-lg shadow">
           {selectedChat ? (
             <>
-              {/* Header */}
               <div className="flex justify-between items-center p-4 border-b border-gray-300 bg-gray-50 rounded-t-lg">
                 <div className="flex items-center gap-3">
                   <img
-                    src={selectedChat.avatar}
-                    alt={selectedChat.name}
+                    src={otherPerson?.avatar}
+                    alt={otherPerson?.name}
                     className="w-12 h-12 rounded-full"
                   />
                   <div>
-                    <h3 className="font-semibold">{selectedChat.name}</h3>
-                    <span className="text-sm text-green-500">{selectedChat.active ? "Online" : "Offline"}</span>
+                    <h3 className="font-semibold">{otherPerson?.name}</h3>
+                    <span className="text-sm text-green-500">
+                      {selectedChat.active ? "Online" : "Offline"}
+                    </span>
                   </div>
                 </div>
                 <div className="flex gap-4 text-gray-600">
-                  <FiPhone className="w-5 h-5 cursor-pointer hover:text-blue-500"/>
-                  <FiVideo className="w-5 h-5 cursor-pointer hover:text-blue-500"/>
+                  <FiPhone className="w-5 h-5 cursor-pointer hover:text-[#01cdcc]" />
+                  <FiVideo className="w-5 h-5 cursor-pointer hover:text-[#01cdcc]" />
                 </div>
               </div>
 
-              {/* Messages */}
               <div className="flex-1 p-4 overflow-y-auto space-y-3 bg-gray-50">
-                {selectedChat.messages.map((msg, idx) => (
+                {selectedChat.messages?.map((msg, idx) => (
                   <div
                     key={idx}
-                    className={`p-3 rounded-lg max-w-md break-words 
-                      ${msg.from === "me" ? "bg-violet-200 self-end" : "bg-gray-200 self-start"}`}
+                    className={`flex items-end gap-2 ${msg.from === "me" ? "justify-end" : "justify-start"}`}
                   >
-                    {msg.text}
-                    <div className="text-xs text-gray-500 mt-1 text-right">{msg.time}</div>
+                    {msg.from !== "me" && (
+                      <img src={otherPerson?.avatar} className="w-8 h-8 rounded-full" alt="avatar" />
+                    )}
+                    <div className={`p-3 rounded-lg max-w-md break-words ${msg.from === "me" ? "bg-[#01cdcc] text-white" : "bg-gray-200 text-gray-800"}`}>
+                      {msg.text}
+                      {msg.from === "me" && <span className="ml-1 text-xs">✔</span>}
+                      <div className="text-xs text-gray-500 mt-1 text-right">{msg.time}</div>
+                    </div>
+                    {msg.from === "me" && (
+                      <img src={otherPerson?.avatar} className="w-8 h-8 rounded-full opacity-0" alt="avatar" />
+                    )}
                   </div>
                 ))}
                 <div ref={messagesEndRef}></div>
               </div>
 
-              {/* Input */}
               <div className="flex items-center p-3 border-t border-gray-300 gap-2 bg-gray-50 rounded-b-lg">
                 <input
                   type="text"
                   placeholder="Type a message..."
-                  className="flex-1 border border-gray-300 rounded-full px-4 py-2 focus:outline-none focus:ring focus:border-blue-300"
+                  className="flex-1 border border-gray-300 rounded-full px-4 py-2 focus:outline-none focus:ring focus:ring-[#01cdcc] focus:border-[#01cdcc]"
                   value={newMessage}
                   onChange={e => setNewMessage(e.target.value)}
                   onKeyDown={e => { if(e.key === 'Enter') handleSendMessage(); }}
                 />
                 <button
-                  className="bg-blue-500 p-2 rounded-full text-white hover:bg-blue-600"
+                  className="bg-[#01cdcc] p-2 rounded-full text-white hover:bg-[#006766]"
                   onClick={handleSendMessage}
                 >
                   <FiSend />
@@ -161,8 +205,8 @@ export default function ChatPage() {
           )}
         </div>
 
+        {otherPerson && <ProfilePanel profile={otherPerson} />}
       </div>
-      <ProfilePanel></ProfilePanel>
     </div>
   );
 }

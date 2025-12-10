@@ -86,9 +86,9 @@ export default function Dashboard() {
           path: "/socialmedia",
           children: [
             {
-              name: "Post Generation",
+              name: "Add Social Media",
               icon: <FaImage />,
-              path: "/socialmedia/post",
+              path: "/socialmedia/add",
               children: [
                 { name: "Create", icon: <FaImage />, path: "/socialmedia/post/create" },
                 { name: "Image", icon: <FaImage />, path: "/socialmedia/post/image" },
@@ -96,7 +96,7 @@ export default function Dashboard() {
                 { name: "Schedule Post", icon: <FaCalendarAlt />, path: "/socialmedia/post/schedule" },
               ],
             },
-            { name: "Add Social Media", icon: <FaUsers />, path: "/socialmedia/add" },
+            { name: "Post Generation", icon: <FaUsers />, path: "/socialmedia/post" },
             { name: "Chat Bot", icon: <FaRobot />, path: "/socialmedia/chatbot" },
             { name: "Comments", icon: <FaComments />, path: "/socialmedia/comments" },
             { name: "Call Generation", icon: <FaPhoneAlt />, path: "/socialmedia/call" },

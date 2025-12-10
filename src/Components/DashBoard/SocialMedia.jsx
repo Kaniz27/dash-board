@@ -13,7 +13,7 @@ import {
 export default function SocialMediaList() {
   const [platforms, setPlatforms] = useState([]);
 
-  // Map icon strings from JSON to actual React Icons
+  
   const icons = {
     FaFacebookF: <FaFacebookF className="text-blue-600 w-6 h-6" />,
     FaInstagram: <FaInstagram className="text-pink-500 w-6 h-6" />,

@@ -1,81 +1,154 @@
 [
   {
     "id": 1,
-    "name": "Cody Fisher",
-    "avatar": "https://randomuser.me/api/portraits/men/32.jpg",
-    "lastMessage": "Hey! Can you review ",
-    "time": "Fri 3:30 PM",
-    "active": true,
+    "name": "Kaniz Fatema",
+    "avatar": "https://i.pravatar.cc/150?img=1",
+    "position": "Frontend Developer",
+    "email": "kaniz@example.com",
+    "phone": "+8801700000000",
+    "bio": "Loves React and web development, focusing on modern frontend technologies.",
+    "social": {
+      "facebook": "https://facebook.com/kaniz",
+      "twitter": "https://twitter.com/kaniz",
+      "linkedin": "https://linkedin.com/in/kaniz",
+      "github": "https://github.com/kaniz"
+    },
     "messages": [
-      { "from": "them", "text": "Hey! Can you review the dashboard for me?", "time": "Fri 3:30 PM" },
-      { "from": "me", "text": "Sure, I’ll check the dashboard now.", "time": "Fri 3:45 PM" },
-      { "from": "them", "text": "It will growth is coming from.", "time": "Fri 4:00 PM" },
-      { "from": "me", "text": "Got it. I’ll add a detailed table for platform engagement and update the charts.", "time": "Fri 4:15 PM" },
-      { "from": "them", "text": "Perfect! Can you also check the forecast section?", "time": "Fri 4:30 PM" },
-      { "from": "me", "text": "Yes, I’ll update the forecast tonight and send you the revised draft by tomorrow morning.", "time": "Fri 4:45 PM" },
-      { "from": "them", "text": "Great! Also, please prepare the slides for the team presentation.", "time": "Fri 5:00 PM" },
-      { "from": "me", "text": "Understood. I’ll make sure the slides match the dashboard visuals and highlight the key metrics.", "time": "Fri 5:15 PM" },
-      { "from": "them", "text": "Thanks! Don’t forget to include last month’s summary for context, and add the client feedback section after the key metrics.", "time": "Fri 5:30 PM" },
-      { "from": "me", "text": "Will do. Everything will be ready before the meeting tomorrow.", "time": "Fri 5:45 PM" }
+      { "from": "customer", "text": "Hi, I want to know the status of my order.", "timestamp": "2025-12-10T14:33:00Z" },
+      { "from": "bot", "text": "Sure! Please provide me your order ID.", "timestamp": "2025-12-10T14:33:02Z" },
+      { "from": "customer", "text": "Order ID is ORD-2211.", "timestamp": "2025-12-10T14:33:10Z" },
+      { "from": "bot", "text": "Thank you! Fetching latest status...", "timestamp": "2025-12-10T14:33:12Z" }
     ]
   },
   {
     "id": 2,
-    "name": "Eleanor Pena",
-    "avatar": "https://randomuser.me/api/portraits/women/44.jpg",
-    "lastMessage": "Project deadline feedback requested.",
-    "time": "4:30 PM",
-    "active": false,
+    "name": "Hasib Rahman",
+    "avatar": "https://i.pravatar.cc/150?img=2",
+    "position": "Full Stack Developer",
+    "email": "hasib@example.com",
+    "phone": "+8801800000000",
+    "bio": "Full stack developer skilled in React, Node.js, and database management.",
+    "social": {
+      "facebook": "https://facebook.com/hasib",
+      "twitter": "https://twitter.com/hasib",
+      "linkedin": "https://linkedin.com/in/hasib",
+      "github": "https://github.com/hasib"
+    },
     "messages": [
-      { "from": "them", "text": "Project deadline feedback requested.", "time": "4:30 PM" },
-      { "from": "me", "text": "Noted, will update.", "time": "4:45 PM" },
-      { "from": "them", "text": "Ensure timeline is feasible.", "time": "5:00 PM" }
+      { "from": "customer", "text": "Great! Do you have the tracking number?", "timestamp": "2025-12-10T14:34:40Z" },
+      { "from": "seller", "text": "Yes, here it is: TRK-998822.", "timestamp": "2025-12-10T14:35:01Z" },
+      { "from": "bot", "text": "Would you like me to track it for you?", "timestamp": "2025-12-10T14:35:05Z" }
     ]
   },
   {
     "id": 3,
+    "name": "Cody Fisher",
+    "avatar": "https://randomuser.me/api/portraits/men/32.jpg",
+    "position": "Product Manager",
+    "email": "cody@example.com",
+    "phone": "+8801700000001",
+    "bio": "Product manager, loves dashboards and data visualization.",
+    "social": {
+      "facebook": "https://facebook.com/cody",
+      "twitter": "https://twitter.com/cody",
+      "linkedin": "https://linkedin.com/in/cody",
+      "github": "https://github.com/cody"
+    },
+    "messages": [
+      { "from": "them", "text": "Hey! Can you review the dashboard for me?", "time": "Fri 3:30 PM" },
+      { "from": "me", "text": "Sure, I’ll check the dashboard now.", "time": "Fri 3:45 PM" }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Eleanor Pena",
+    "avatar": "https://randomuser.me/api/portraits/women/44.jpg",
+    "position": "Marketing Manager",
+    "email": "eleanorpena@gmail.com",
+    "phone": "+1 (555) 123-4567",
+    "bio": "Marketing Manager with 5+ years of experience in digital campaigns, brand strategy, and team leadership.",
+    "social": {
+      "facebook": "https://facebook.com/eleanor",
+      "twitter": "https://twitter.com/eleanor",
+      "linkedin": "https://linkedin.com/in/eleanor",
+      "github": "https://github.com/eleanor"
+    },
+    "messages": [
+      { "from": "them", "text": "Project deadline feedback requested.", "time": "4:30 PM" },
+      { "from": "me", "text": "Noted, will update.", "time": "4:45 PM" }
+    ]
+  },
+  {
+    "id": 5,
     "name": "Jacob Jones",
     "avatar": "https://randomuser.me/api/portraits/men/45.jpg",
-    "lastMessage": "Monthly report needs approval.",
-    "time": "12:15 PM",
-    "active": false,
+    "position": "Finance Analyst",
+    "email": "jacob@example.com",
+    "phone": "+8801700000003",
+    "bio": "Finance analyst with expertise in budget planning and reporting.",
+    "social": {
+      "facebook": "https://facebook.com/jacob",
+      "twitter": "https://twitter.com/jacob",
+      "linkedin": "https://linkedin.com/in/jacob",
+      "github": "https://github.com/jacob"
+    },
     "messages": [
       { "from": "them", "text": "Monthly report needs approval.", "time": "12:15 PM" },
       { "from": "me", "text": "I’ll review and send feedback.", "time": "12:30 PM" }
     ]
   },
   {
-    "id": 4,
+    "id": 6,
     "name": "Esther Howard",
     "avatar": "https://randomuser.me/api/portraits/women/50.jpg",
-    "lastMessage": "Client feedback update.",
-    "time": "Yesterday",
-    "active": false,
+    "position": "Software Engineer",
+    "email": "esther@example.com",
+    "phone": "+8801800000004",
+    "bio": "Software Engineer experienced in frontend and backend development with React and Node.js.",
+    "social": {
+      "facebook": "https://facebook.com/esther",
+      "twitter": "https://twitter.com/esther",
+      "linkedin": "https://linkedin.com/in/esther",
+      "github": "https://github.com/esther"
+    },
     "messages": [
       { "from": "them", "text": "Client feedback update.", "time": "Yesterday" },
       { "from": "me", "text": "Thanks! I’ll analyze.", "time": "Yesterday" }
     ]
   },
   {
-    "id": 5,
+    "id": 7,
     "name": "Jenny Wilson",
     "avatar": "https://randomuser.me/api/portraits/women/51.jpg",
-    "lastMessage": "Sent updated designs for review.",
-    "time": "25 Aug",
-    "active": false,
+    "position": "UI/UX Designer",
+    "email": "jenny@example.com",
+    "phone": "+8801700000005",
+    "bio": "UI/UX designer creating intuitive interfaces and engaging user experiences.",
+    "social": {
+      "facebook": "https://facebook.com/jenny",
+      "twitter": "https://twitter.com/jenny",
+      "linkedin": "https://linkedin.com/in/jenny",
+      "github": "https://github.com/jenny"
+    },
     "messages": [
       { "from": "them", "text": "Sent updated designs for review.", "time": "25 Aug" },
-      { "from": "me", "text": "Received, reviewing now.", "time": "25 Aug" },
-      { "from": "them", "text": "Please provide comments.", "time": "25 Aug" }
+      { "from": "me", "text": "Received, reviewing now.", "time": "25 Aug" }
     ]
   },
   {
-    "id": 6,
+    "id": 8,
     "name": "Kristin Watson",
     "avatar": "https://randomuser.me/api/portraits/women/52.jpg",
-    "lastMessage": "Shared notes on last meeting.",
-    "time": "25 Aug",
-    "active": false,
+    "position": "Operations Manager",
+    "email": "kristin@example.com",
+    "phone": "+8801800000006",
+    "bio": "Operations manager overseeing daily activities and team coordination.",
+    "social": {
+      "facebook": "https://facebook.com/kristin",
+      "twitter": "https://twitter.com/kristin",
+      "linkedin": "https://linkedin.com/in/kristin",
+      "github": "https://github.com/kristin"
+    },
     "messages": [
       { "from": "them", "text": "Shared notes on last meeting.", "time": "25 Aug" },
       { "from": "me", "text": "Thanks, I’ll review.", "time": "25 Aug" }

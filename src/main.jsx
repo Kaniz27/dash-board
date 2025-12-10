@@ -37,6 +37,11 @@ import Couriarlist from "./Components/Courier/Couriarlist";
 import CourierBooking from "./Components/Courier/CourierBooking";
 import Tracking from "./Components/Courier/Tracking";
 import Refund from "./Components/Courier/Refund";
+import Income from "./Components/Account/Income";
+import Sells from "./Components/Account/Sells";
+import Payment from "./Components/Account/Payment";
+import DebitCredit from "./Components/Account/DebitCredit";
+import ProfitLoss from "./Components/Account/ProfitLoss";
 
 
 const router = createBrowserRouter([
@@ -116,7 +121,7 @@ const router = createBrowserRouter([
       },
       {
         path: "socialmedia/chatbot",
-        element:<Chatbot></Chatbot>,
+        element:<ChatList></ChatList>,
       },
       {
         path: "socialmedia/comments",
@@ -132,11 +137,11 @@ const router = createBrowserRouter([
         element:<OrderList></OrderList>
       },
        {
-        path: "/orders/confirm/:orderId",
+        path: "/orders/confirm",
         element:<OrderConfirm></OrderConfirm>,
       },
        {
-        path: "Reject/Cancel Order",
+        path: "/orders/reject",
         element:<OrderCancel></OrderCancel>
        },
       //  payment
@@ -153,14 +158,72 @@ const router = createBrowserRouter([
         element:<CourierBooking></CourierBooking>
        },
        {
-        path: "/courier/${c.id}/bookings",
+        path: "courier/tracking",
         element:<Tracking></Tracking>,
        },
        {
         path: "/courier/refund",
         element:<Refund></Refund>,
        },
+      //  account
+      {
+        path: "account",
+        element:<Income></Income>,
+       },
+       {
+        path: "account/income",
+        element:<Income></Income>,
+       },
+       {
+        path: "/account/sells",
+        element:<Sells></Sells>,
+       },
+       {
+        path: "/account/refund",
+        element:<Refund></Refund>,
+       },
+       {
+        path: "account/payment",
+        element:<Payment></Payment>,
+       },
+       {
+        path: "/account/debit-credit",
+        element:<DebitCredit></DebitCredit>,
+       },
+       {
+        path: "/account/profit-loss",
+        element:<ProfitLoss></ProfitLoss>,
+       },
+      //  payment
 
+       {
+        path: "/payment",
+        element:<ProfitLoss></ProfitLoss>,
+       },
+       {
+        path: "payment/bill",
+        element:<ProfitLoss></ProfitLoss>,
+       },
+       {
+        path: "/payment/voice",
+        element:<ProfitLoss></ProfitLoss>,
+       },
+       {
+        path: "Topup/Recharge",
+        element:<ProfitLoss></ProfitLoss>,
+       },
+       {
+        path: "/payment/topup",
+        element:<ProfitLoss></ProfitLoss>,
+       },
+       {
+        path: "/payment/transactions",
+        element:<ProfitLoss></ProfitLoss>,
+       },
+       {
+        path: "/payment/courier-history",
+        element:<ProfitLoss></ProfitLoss>,
+       },
       //  basic setup
       {
         path: "/setup/profile",

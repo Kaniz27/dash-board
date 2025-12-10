@@ -1,0 +1,88 @@
+[
+  {
+    "id": 1,
+    "user": { "name": "Kaniz Fatema", "avatar": "https://i.pravatar.cc/150?img=1" },
+    "image": "https://picsum.photos/500/300?random=1",
+    "caption": "Enjoying the sunny day at the beach! 🌞🏖️",
+    "time": "2 hours ago",
+    "likes": ["Cody", "Eleanor", "Jacob", "Jenny", "Kristin"],
+    "comments": ["Jenny", "Kristin", "Cody"],
+    "commentsList": [
+      { "user": "Jenny", "text": "Amazing!" },
+      { "user": "Kristin", "text": "Wow 😍" },
+      { "user": "Cody", "text": "Looks fun!" }
+    ],
+    "shares": 8
+  },
+  {
+    "id": 2,
+    "user": { "name": "Hasib Rahman", "avatar": "https://i.pravatar.cc/150?img=2" },
+    "image": "https://picsum.photos/500/300?random=2",
+    "caption": "My new painting is finally complete! 🎨",
+    "time": "5 hours ago",
+    "likes": ["Kaniz", "Eleanor", "Cody"],
+    "comments": ["Kaniz", "Eleanor"],
+    "commentsList": [
+      { "user": "Kaniz", "text": "Beautiful work!" },
+      { "user": "Eleanor", "text": "Love the colors!" }
+    ],
+    "shares": 5
+  },
+  {
+    "id": 3,
+    "user": { "name": "Eleanor Pena", "avatar": "https://i.pravatar.cc/150?img=3" },
+    "image": "https://picsum.photos/500/300?random=3",
+    "caption": "Weekend vibes with friends 🍕🥤",
+    "time": "1 day ago",
+    "likes": ["Kaniz", "Hasib", "Cody", "Jenny"],
+    "comments": ["Hasib", "Jenny", "Kristin"],
+    "commentsList": [
+      { "user": "Hasib", "text": "Looks fun!" },
+      { "user": "Jenny", "text": "Yum 😋" },
+      { "user": "Kristin", "text": "Great vibes!" }
+    ],
+    "shares": 20
+  },
+  {
+    "id": 4,
+    "user": { "name": "Cody Fisher", "avatar": "https://i.pravatar.cc/150?img=4" },
+    "image": "https://picsum.photos/500/300?random=4",
+    "caption": "Exploring the mountains! ⛰️🧗",
+    "time": "2 days ago",
+    "likes": ["Kaniz", "Hasib", "Eleanor"],
+    "comments": ["Kaniz", "Hasib"],
+    "commentsList": [
+      { "user": "Kaniz", "text": "Awesome view!" },
+      { "user": "Hasib", "text": "Wow, amazing!" }
+    ],
+    "shares": 10
+  },
+  {
+    "id": 5,
+    "user": { "name": "Jenny Wilson", "avatar": "https://i.pravatar.cc/150?img=5" },
+    "image": "https://picsum.photos/500/300?random=5",
+    "caption": "New recipe tried today! 🍰👩‍🍳",
+    "time": "3 days ago",
+    "likes": ["Kaniz", "Eleanor", "Cody", "Hasib"],
+    "comments": ["Kaniz", "Cody"],
+    "commentsList": [
+      { "user": "Kaniz", "text": "Looks delicious!" },
+      { "user": "Cody", "text": "Yummy 😋" }
+    ],
+    "shares": 6
+  },
+  {
+    "id": 6,
+    "user": { "name": "Kristin Watson", "avatar": "https://i.pravatar.cc/150?img=6" },
+    "image": "https://picsum.photos/500/300?random=6",
+    "caption": "Morning yoga session complete! 🧘‍♀️🌅",
+    "time": "4 days ago",
+    "likes": ["Kaniz", "Jenny", "Cody"],
+    "comments": ["Jenny", "Kristin"],
+    "commentsList": [
+      { "user": "Jenny", "text": "Feeling relaxed?" },
+      { "user": "Kristin", "text": "Great start to the day!" }
+    ],
+    "shares": 3
+  }
+]

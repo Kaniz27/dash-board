@@ -1,0 +1,31 @@
+{
+  "transactions": [
+    {
+      "id": 1,
+      "date": "2025-12-10",
+      "type": "Credit",
+      "amount": 1200,
+      "method": "Wallet",
+      "status": "Success",
+      "description": "Payment received from Rahim"
+    },
+    {
+      "id": 2,
+      "date": "2025-12-10",
+      "type": "Debit",
+      "amount": 500,
+      "method": "Card",
+      "status": "Pending",
+      "description": "Payment to supplier"
+    },
+    {
+      "id": 3,
+      "date": "2025-12-09",
+      "type": "Credit",
+      "amount": 2000,
+      "method": "Bank Transfer",
+      "status": "Success",
+      "description": "Received from Jannat Ara"
+    }
+  ]
+}

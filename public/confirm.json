@@ -6,86 +6,110 @@
     {
       "order_id": "ORD-1001",
       "customer": "Rahim Uddin",
+      "location": "Dhaka, Mirpur-10",
+      "contact": "01711111111",
+      "price": 1250,
       "platform": "facebook",
-      "order_price": 1250,
-      "status": "shipped"
+      "status": "Confirm"
     },
     {
       "order_id": "ORD-1002",
       "customer": "Sadia Akter",
+      "location": "Chittagong, Agrabad",
+      "contact": "01722222222",
+      "price": 950,
       "platform": "instagram",
-      "order_price": 950,
-      "status": "on packaging"
+      "status": "Confirm"
     },
     {
       "order_id": "ORD-1003",
       "customer": "Hasan Ali",
+      "location": "Sylhet, Zindabazar",
+      "contact": "01733333333",
+      "price": 2150,
       "platform": "tiktok",
-      "order_price": 2150,
-      "status": "shipped"
+      "status": "Confirm"
     },
     {
       "order_id": "ORD-1004",
       "customer": "Mehedi Hasan",
+      "location": "Khulna, Sonadanga",
+      "contact": "01744444444",
+      "price": 1870,
       "platform": "website",
-      "order_price": 1870,
-      "status": "on delivery"
+      "status": "Confirm"
     },
     {
       "order_id": "ORD-1005",
       "customer": "Jannat Ara",
+      "location": "Dhaka, Uttara ",
+      "contact": "01755555555",
+      "price": 1450,
       "platform": "facebook",
-      "order_price": 1450,
-      "status": "delivered"
+      "status": "Confirm"
     },
     {
       "order_id": "ORD-1006",
       "customer": "Tanjim Ahmed",
+      "location": "Rajshahi, Shaheb Bazar",
+      "contact": "01766666666",
+      "price": 1650,
       "platform": "instagram",
-      "order_price": 1650,
-      "status": "shipped"
+      "status": "Confirm"
     },
     {
       "order_id": "ORD-1007",
       "customer": "Nusrat Jahan",
+      "location": "Barishal, New Market",
+      "contact": "01777777777",
+      "price": 990,
       "platform": "tiktok",
-      "order_price": 990,
-      "status": "on packaging"
+      "status": "Confirm"
     },
     {
       "order_id": "ORD-1008",
       "customer": "Kamal Hossain",
+      "location": "Comilla, Kandirpar",
+      "contact": "01788888888",
+      "price": 3200,
       "platform": "website",
-      "order_price": 3200,
-      "status": "shipped"
+      "status": "Confirm"
     },
     {
       "order_id": "ORD-1009",
       "customer": "Farzana Mimi",
+      "location": "Dhaka, Dhanmondi",
+      "contact": "01799999999",
+      "price": 1100,
       "platform": "facebook",
-      "order_price": 1100,
-      "status": "on delivery"
+      "status": "Confirm"
     },
     {
       "order_id": "ORD-1010",
       "customer": "Rafiul Islam",
+      "location": "Gazipur, Tongi College Gate",
+      "contact": "01811111111",
+      "price": 1780,
       "platform": "instagram",
-      "order_price": 1780,
-      "status": "delivered"
+      "status": "Confirm"
     },
     {
       "order_id": "ORD-1011",
       "customer": "Shahadat Hossain",
+      "location": "Rangpur, Jahaj Company Mor",
+      "contact": "01822222222",
+      "price": 2500,
       "platform": "tiktok",
-      "order_price": 2500,
-      "status": "shipped"
+      "status": "Confirm"
     },
     {
       "order_id": "ORD-1012",
       "customer": "Maliha Tasnim",
+      "location": "Mymensingh, Town Hall",
+      "contact": "01833333333",
+      "price": 2050,
       "platform": "website",
-      "order_price": 2050,
-      "status": "shipped"
+      "status": "Confirm"
     }
   ]
 }

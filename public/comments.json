@@ -5,14 +5,14 @@
     "image": "https://picsum.photos/500/300?random=1",
     "caption": "Enjoying the sunny day at the beach! 🌞🏖️",
     "time": "2 hours ago",
+    "platform": { "name": "Web", "icon": "FaGlobe" },
     "likes": ["Cody", "Eleanor", "Jacob", "Jenny", "Kristin"],
-    "comments": ["Jenny", "Kristin", "Cody"],
     "commentsList": [
       { "user": "Jenny", "text": "Amazing!" },
       { "user": "Kristin", "text": "Wow 😍" },
-      { "user": "Cody", "text": "Looks fun!" }
-    ],
-    "shares": 8
+      { "user": "Cody", "text": "Looks fun!" },
+      { "user": "BadUser", "text": "This is bad" }
+    ]
   },
   {
     "id": 2,
@@ -20,13 +20,13 @@
     "image": "https://picsum.photos/500/300?random=2",
     "caption": "My new painting is finally complete! 🎨",
     "time": "5 hours ago",
+    "platform": { "name": "iOS", "icon": "FaApple" },
     "likes": ["Kaniz", "Eleanor", "Cody"],
-    "comments": ["Kaniz", "Eleanor"],
     "commentsList": [
       { "user": "Kaniz", "text": "Beautiful work!" },
-      { "user": "Eleanor", "text": "Love the colors!" }
-    ],
-    "shares": 5
+      { "user": "Eleanor", "text": "Love the colors!" },
+      { "user": "Hater", "text": "Ugly painting" }
+    ]
   },
   {
     "id": 3,
@@ -34,14 +34,13 @@
     "image": "https://picsum.photos/500/300?random=3",
     "caption": "Weekend vibes with friends 🍕🥤",
     "time": "1 day ago",
+    "platform": { "name": "Android", "icon": "FaAndroid" },
     "likes": ["Kaniz", "Hasib", "Cody", "Jenny"],
-    "comments": ["Hasib", "Jenny", "Kristin"],
     "commentsList": [
       { "user": "Hasib", "text": "Looks fun!" },
       { "user": "Jenny", "text": "Yum 😋" },
       { "user": "Kristin", "text": "Great vibes!" }
-    ],
-    "shares": 20
+    ]
   },
   {
     "id": 4,
@@ -49,13 +48,13 @@
     "image": "https://picsum.photos/500/300?random=4",
     "caption": "Exploring the mountains! ⛰️🧗",
     "time": "2 days ago",
+    "platform": { "name": "Web", "icon": "FaGlobe" },
     "likes": ["Kaniz", "Hasib", "Eleanor"],
-    "comments": ["Kaniz", "Hasib"],
     "commentsList": [
       { "user": "Kaniz", "text": "Awesome view!" },
-      { "user": "Hasib", "text": "Wow, amazing!" }
-    ],
-    "shares": 10
+      { "user": "Hasib", "text": "Wow, amazing!" },
+      { "user": "Troll", "text": "Hate it" }
+    ]
   },
   {
     "id": 5,
@@ -63,13 +62,12 @@
     "image": "https://picsum.photos/500/300?random=5",
     "caption": "New recipe tried today! 🍰👩‍🍳",
     "time": "3 days ago",
+    "platform": { "name": "Mobile Web", "icon": "FaMobileAlt" },
     "likes": ["Kaniz", "Eleanor", "Cody", "Hasib"],
-    "comments": ["Kaniz", "Cody"],
     "commentsList": [
       { "user": "Kaniz", "text": "Looks delicious!" },
       { "user": "Cody", "text": "Yummy 😋" }
-    ],
-    "shares": 6
+    ]
   },
   {
     "id": 6,
@@ -77,12 +75,50 @@
     "image": "https://picsum.photos/500/300?random=6",
     "caption": "Morning yoga session complete! 🧘‍♀️🌅",
     "time": "4 days ago",
+    "platform": { "name": "iOS", "icon": "FaApple" },
     "likes": ["Kaniz", "Jenny", "Cody"],
-    "comments": ["Jenny", "Kristin"],
     "commentsList": [
       { "user": "Jenny", "text": "Feeling relaxed?" },
       { "user": "Kristin", "text": "Great start to the day!" }
-    ],
-    "shares": 3
+    ]
+  },
+  {
+    "id": 7,
+    "user": { "name": "Hasib Rahman", "avatar": "https://i.pravatar.cc/150?img=7" },
+    "image": "https://picsum.photos/500/300?random=7",
+    "caption": "Sunset photography 🌇📸",
+    "time": "5 days ago",
+    "platform": { "name": "Android", "icon": "FaAndroid" },
+    "likes": ["Kaniz", "Kristin"],
+    "commentsList": [
+      { "user": "Cody", "text": "Beautiful shot!" },
+      { "user": "Troll", "text": "Bad photo" }
+    ]
+  },
+  {
+    "id": 8,
+    "user": { "name": "Kaniz Fatema", "avatar": "https://i.pravatar.cc/150?img=8" },
+    "image": "https://picsum.photos/500/300?random=8",
+    "caption": "Coffee time ☕",
+    "time": "6 days ago",
+    "platform": { "name": "Web", "icon": "FaGlobe" },
+    "likes": ["Eleanor", "Cody"],
+    "commentsList": [
+      { "user": "Hasib", "text": "Love it!" },
+      { "user": "Hater", "text": "I hate coffee" }
+    ]
+  },
+  {
+    "id": 9,
+    "user": { "name": "Farzana Mimi", "avatar": "https://i.pravatar.cc/150?img=9" },
+    "image": "https://picsum.photos/500/300?random=9",
+    "caption": "Weekend trip! 🚗🏞️",
+    "time": "1 week ago",
+    "platform": { "name": "Mobile Web", "icon": "FaMobileAlt" },
+    "likes": ["Kaniz", "Hasib", "Cody"],
+    "commentsList": [
+      { "user": "Kristin", "text": "Amazing scenery!" },
+      { "user": "Jenny", "text": "Wow 😍" }
+    ]
   }
 ]

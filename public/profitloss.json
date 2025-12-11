@@ -1,0 +1,26 @@
+{
+  "profit_loss": [
+    {
+      "id": "PL-001",
+      "date": "2025-12-01",
+      "revenue": 5000,
+      "expenses": 3000,
+      "gross_profit": 2000,
+      "operating_expenses": 500,
+      "net_profit": 1500,
+      "status": "Profit",
+      "notes": "Good month"
+    },
+    {
+      "id": "PL-002",
+      "date": "2025-12-02",
+      "revenue": 4000,
+      "expenses": 4500,
+      "gross_profit": -500,
+      "operating_expenses": 200,
+      "net_profit": -700,
+      "status": "Loss",
+      "notes": "High expenses"
+    }
+  ]
+}

@@ -1,0 +1,124 @@
+{
+  "courier_history": [
+    {
+      "booking_id": "B-001",
+      "courier_id": "C-001",
+      "courier_name": "Rahim Uddin",
+      "customer": "Sadia Akter",
+      "pickup": "Dhaka",
+      "delivery": "Chittagong",
+      "status": "Delivered",
+      "items": 3,
+      "date": "2025-12-10",
+      "action": "view"
+    },
+    {
+      "booking_id": "B-002",
+      "courier_id": "C-002",
+      "courier_name": "Hasan Ali",
+      "customer": "Rahim Uddin",
+      "pickup": "Khulna",
+      "delivery": "Sylhet",
+      "status": "Pending",
+      "items": 5,
+      "date": "2025-12-09",
+      "action": "view"
+    },
+    {
+      "booking_id": "B-003",
+      "courier_id": "C-003",
+      "courier_name": "Mehedi Hasan",
+      "customer": "Jannat Ara",
+      "pickup": "Rajshahi",
+      "delivery": "Barishal",
+      "status": "Shipped",
+      "items": 2,
+      "date": "2025-12-08",
+      "action": "view"
+    },
+    {
+      "booking_id": "B-004",
+      "courier_id": "C-004",
+      "courier_name": "Tanjim Ahmed",
+      "customer": "Kamal Hossain",
+      "pickup": "Gazipur",
+      "delivery": "Comilla",
+      "status": "Delivered",
+      "items": 4,
+      "date": "2025-12-07",
+      "action": "view"
+    },
+    {
+      "booking_id": "B-005",
+      "courier_id": "C-005",
+      "courier_name": "Nusrat Jahan",
+      "customer": "Farzana Mimi",
+      "pickup": "Dhaka",
+      "delivery": "Rangpur",
+      "status": "Cancelled",
+      "items": 1,
+      "date": "2025-12-06",
+      "action": "view"
+    },
+    {
+      "booking_id": "B-006",
+      "courier_id": "C-006",
+      "courier_name": "Kamal Hossain",
+      "customer": "Rafiul Islam",
+      "pickup": "Sylhet",
+      "delivery": "Dhaka",
+      "status": "Pending",
+      "items": 6,
+      "date": "2025-12-05",
+      "action": "view"
+    },
+    {
+      "booking_id": "B-007",
+      "courier_id": "C-001",
+      "courier_name": "Rahim Uddin",
+      "customer": "Sadia Akter",
+      "pickup": "Chittagong",
+      "delivery": "Khulna",
+      "status": "Shipped",
+      "items": 2,
+      "date": "2025-12-04",
+      "action": "view"
+    },
+    {
+      "booking_id": "B-008",
+      "courier_id": "C-002",
+      "courier_name": "Hasan Ali",
+      "customer": "Mehedi Hasan",
+      "pickup": "Barishal",
+      "delivery": "Gazipur",
+      "status": "Delivered",
+      "items": 3,
+      "date": "2025-12-03",
+      "action": "view"
+    },
+    {
+      "booking_id": "B-009",
+      "courier_id": "C-003",
+      "courier_name": "Mehedi Hasan",
+      "customer": "Jannat Ara",
+      "pickup": "Dhaka",
+      "delivery": "Rajshahi",
+      "status": "Pending",
+      "items": 5,
+      "date": "2025-12-02",
+      "action": "view"
+    },
+    {
+      "booking_id": "B-010",
+      "courier_id": "C-004",
+      "courier_name": "Tanjim Ahmed",
+      "customer": "Kamal Hossain",
+      "pickup": "Rangpur",
+      "delivery": "Comilla",
+      "status": "Shipped",
+      "items": 4,
+      "date": "2025-12-01",
+      "action": "view"
+    }
+  ]
+}

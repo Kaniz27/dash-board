@@ -2,6 +2,30 @@
   "courierList": [
     { "id": 1, "name": "DHL Express", "phone": "+880170000111", "status": "Active" },
     { "id": 2, "name": "FedEx", "phone": "+880170000222", "status": "Active" },
-    { "id": 3, "name": "Pathao Courier", "phone": "+880170000333", "status": "Inactive" }
+    { "id": 3, "name": "Pathao Courier", "phone": "+880170000333", "status": "Active" },
+    { "id": 4, "name": "Sundarban Courier Service", "phone": "+880170000444", "status": "Active" },
+    { "id": 5, "name": "SA Paribahan", "phone": "+880170000555", "status": "Active" },
+    { "id": 6, "name": "RedX Courier", "phone": "+880170000666", "status": "Active" },
+    { "id": 7, "name": "Steadfast Courier", "phone": "+880170000777", "status": "Active" },
+    { "id": 8, "name": "Paperfly", "phone": "+880170000888", "status": "Active" },
+    { "id": 9, "name": "Delivery Tiger", "phone": "+880170000999", "status": "Active" },
+    { "id": 10, "name": "E-Courier", "phone": "+880171000000", "status": "Active" },
+    { "id": 11, "name": "Khana Bazar Courier", "phone": "+880171111111", "status": "Active" },
+    { "id": 12, "name": "Janani Express", "phone": "+880171222222", "status": "Active" },
+    { "id": 13, "name": "Uddom Express", "phone": "+880171333333", "status": "Active" },
+    { "id": 14, "name": "Courier Bangladesh", "phone": "+880171444444", "status": "Active" },
+    { "id": 15, "name": "Bangladesh Post Office (EMS)", "phone": "+880271555555", "status": "Active" },
+    { "id": 16, "name": "Aramex", "phone": "+880171666666", "status": "Active" },
+    { "id": 17, "name": "TNT Express", "phone": "+880171777777", "status": "Inactive" },
+    { "id": 18, "name": "Continental Courier", "phone": "+880171888888", "status": "Active" },
+    { "id": 19, "name": "BD Express", "phone": "+880171999999", "status": "Active" },
+    { "id": 20, "name": "J&T Express", "phone": "+880172000000", "status": "Active" },
+    { "id": 21, "name": "Qourier", "phone": "+880172111111", "status": "Active" },
+    { "id": 22, "name": "NavaBD Courier", "phone": "+880172222222", "status": "Active" },
+    { "id": 23, "name": "GoGo Bangla Courier", "phone": "+880172333333", "status": "Active" },
+    { "id": 24, "name": "Kishwan Courier", "phone": "+880172444444", "status": "Inactive" },
+    { "id": 25, "name": "E-Drop Courier", "phone": "+880172555555", "status": "Active" },
+    { "id": 26, "name": "Paribahan Express", "phone": "+880172666666", "status": "Active" },
+    { "id": 27, "name": "Dhaka Courier Service", "phone": "+880172777777", "status": "Active" }
   ]
 }

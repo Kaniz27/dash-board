@@ -162,7 +162,7 @@ export default function Dashboard() {
           path: "/payment",
           children: [
             { name: "Bill", icon: <FaWallet />, path: "/payment/bill" },
-            { name: "Creating Voice", icon: <FaComments />, path: "/payment/voice" },
+            { name: "Create InVoice", icon: <FaComments />, path: "/payment/voice" },
             { name: "Topup/Recharge", icon: <FaMoneyBillAlt />, path: "/payment/topup" },
             { name: "Transaction History", icon: <FaFileInvoice />, path: "/payment/transactions" },
             { name: "Courier History", icon: <FaFileInvoice />, path: "/payment/courier-history" },
@@ -179,6 +179,7 @@ export default function Dashboard() {
           path: "/setup",
           children: [
             { name: "Profile", icon: <FaUserCircle />, path: "/setup/profile" },
+            { name: "Create User", icon: <FaUserCircle />, path: "/setup/createuser" },
             { name: "User Management", icon: <FaUsers />, path: "/setup/users" },
           ],
         },

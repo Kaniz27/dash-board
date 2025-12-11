@@ -1,0 +1,14 @@
+{
+  "income": [
+    { "date": "2025-12-01", "customer": "Rahim Uddin", "amount": 250, "payment_method": "Cash", "status": "Paid" },
+    { "date": "2025-12-02", "customer": "Sadia Akter", "amount": 500, "payment_method": "Credit Card", "status": "Paid" },
+    { "date": "2025-12-03", "customer": "Hasan Ali", "amount": 150, "payment_method": "Paypal", "status": "Pending" },
+    { "date": "2025-12-04", "customer": "Mehedi Hasan", "amount": 300, "payment_method": "Cash", "status": "Paid" },
+    { "date": "2025-12-05", "customer": "Jannat Ara", "amount": 450, "payment_method": "Bank Transfer", "status": "Paid" },
+    { "date": "2025-12-06", "customer": "Tanjim Ahmed", "amount": 200, "payment_method": "Paypal", "status": "Pending" },
+    { "date": "2025-12-07", "customer": "Nusrat Jahan", "amount": 350, "payment_method": "Credit Card", "status": "Paid" },
+    { "date": "2025-12-08", "customer": "Kamal Hossain", "amount": 400, "payment_method": "Cash", "status": "Paid" },
+    { "date": "2025-12-09", "customer": "Farzana Mimi", "amount": 600, "payment_method": "Bank Transfer", "status": "Paid" },
+    { "date": "2025-12-10", "customer": "Rafiul Islam", "amount": 100, "payment_method": "Paypal", "status": "Pending" }
+  ]
+}

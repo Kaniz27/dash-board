@@ -42,6 +42,12 @@ import Sells from "./Components/Account/Sells";
 import Payment from "./Components/Account/Payment";
 import DebitCredit from "./Components/Account/DebitCredit";
 import ProfitLoss from "./Components/Account/ProfitLoss";
+import CreateUsers from "./Components/Profile/CreateUsers";
+import TopUp from "./Components/Payment/TopUp";
+import CourierHistory from "./Components/Payment/CourierHistory";
+import Transactions from "./Components/Payment/Transactions";
+import Bill from "./Components/Payment/Bill";
+import CreateInvoice from "./Components/Payment/CreateInvoice";
 
 
 const router = createBrowserRouter([
@@ -198,36 +204,37 @@ const router = createBrowserRouter([
 
        {
         path: "/payment",
-        element:<ProfitLoss></ProfitLoss>,
+        element:<Bill></Bill>,
        },
        {
         path: "payment/bill",
-        element:<ProfitLoss></ProfitLoss>,
+        element:<Bill></Bill>,
        },
        {
         path: "/payment/voice",
-        element:<ProfitLoss></ProfitLoss>,
-       },
-       {
-        path: "Topup/Recharge",
-        element:<ProfitLoss></ProfitLoss>,
+        element:<CreateInvoice></CreateInvoice>,
        },
        {
         path: "/payment/topup",
-        element:<ProfitLoss></ProfitLoss>,
+        element:<TopUp></TopUp>,
        },
        {
         path: "/payment/transactions",
-        element:<ProfitLoss></ProfitLoss>,
+        element:<Transactions></Transactions>,
        },
+       
        {
         path: "/payment/courier-history",
-        element:<ProfitLoss></ProfitLoss>,
+        element:<CourierHistory></CourierHistory>,
        },
       //  basic setup
       {
         path: "/setup/profile",
         element:<Profile></Profile>,
+       },
+       {
+        path: "/setup/createuser",
+        element:<CreateUsers></CreateUsers>,
        },
        {
         path: "/setup/users",

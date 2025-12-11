@@ -165,7 +165,7 @@ export default function Dashboard() {
             { name: "Create InVoice", icon: <FaComments />, path: "/payment/voice" },
             { name: "Topup/Recharge", icon: <FaMoneyBillAlt />, path: "/payment/topup" },
             { name: "Transaction History", icon: <FaFileInvoice />, path: "/payment/transactions" },
-            { name: "Courier History", icon: <FaFileInvoice />, path: "/payment/courier-history" },
+            { name: "Booking History", icon: <FaFileInvoice />, path: "/payment/courier-history" },
           ],
         },
       ],

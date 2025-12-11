@@ -1,3 +1,4 @@
+// src/Components/Transactions.jsx
 import React, { useEffect, useState } from "react";
 import Sidebar from "../Sidebar";
 
@@ -6,10 +7,11 @@ const Transactions = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("/transaction.json")
+    
+    fetch("/public/transaction.json")
       .then((res) => res.json())
       .then((data) => {
-        setTransactions(data.transactions || []);
+        setTransactions(data || []);
         setLoading(false);
       })
       .catch(() => setLoading(false));
@@ -31,51 +33,46 @@ const Transactions = () => {
       </div>
 
       {/* Main Content */}
-      <div className="ml-64 p-8 w-full">
+      <div className="ml-64 p-6 w-full">
         <h1 className="text-3xl font-bold mb-6">Transactions</h1>
 
-        <div className="space-y-4 max-w-6xl mx-auto">
-          {/* Header Row */}
-          <div className="hidden md:flex justify-between bg-gray-200 rounded-lg p-3 font-semibold">
-            <span className="w-1/12">ID</span>
-            <span className="w-2/12">Date</span>
-            <span className="w-2/12">Type</span>
-            <span className="w-2/12">Amount</span>
-            <span className="w-2/12">Method</span>
-            <span className="w-2/12">Status</span>
-            <span className="w-3/12">Description</span>
-          </div>
+        {/* Table Container */}
+        <div className="overflow-x-auto border border-gray-200 rounded-lg bg-white shadow">
+          <table className="min-w-full divide-y divide-gray-200">
+            <thead className="bg-gray-100">
+              <tr>
+                <th className="px-4 py-3 text-left text-sm font-semibold border-b border-gray-200">SL No.</th>
+                <th className="px-4 py-3 text-left text-sm font-semibold border-b border-gray-200">Transaction Id</th>
+                <th className="px-4 py-3 text-left text-sm font-semibold border-b border-gray-200">Description</th>
+                <th className="px-4 py-3 text-left text-sm font-semibold border-b border-gray-200">Create</th>
+                <th className="px-4 py-3 text-left text-sm font-semibold border-b border-gray-200">Payment Type</th>
+                <th className="px-4 py-3 text-left text-sm font-semibold border-b border-gray-200">Status</th>
+                <th className="px-4 py-3 text-left text-sm font-semibold border-b border-gray-200">Payment Method</th>
+                <th className="px-4 py-3 text-left text-sm font-semibold border-b border-gray-200">Amount</th>
+              </tr>
+            </thead>
 
-          {transactions.map((t) => (
-            <div
-              key={t.id}
-              className="flex flex-wrap md:flex-nowrap justify-between items-center bg-white rounded-xl shadow-md p-4 border border-gray-200 hover:shadow-lg transition-all"
-            >
-              <span className="w-1/12 font-medium">{t.id}</span>
-              <span className="w-2/12">{t.date}</span>
-              <span
-                className={`w-2/12 font-semibold ${
-                  t.type === "Credit" ? "text-green-600" : "text-red-600"
-                }`}
-              >
-                {t.type}
-              </span>
-              <span className="w-2/12 font-medium">${t.amount}</span>
-              <span className="w-2/12">{t.method}</span>
-              <span
-                className={`w-2/12 font-semibold ${
-                  t.status === "Success"
-                    ? "text-green-600"
-                    : t.status === "Pending"
-                    ? "text-yellow-600"
-                    : "text-red-600"
-                }`}
-              >
-                {t.status}
-              </span>
-              <span className="w-3/12 text-gray-700">{t.description}</span>
-            </div>
-          ))}
+            <tbody className="divide-y divide-gray-200">
+              {transactions.map((t) => (
+                <tr key={t.transactionId} className="hover:bg-gray-50">
+                  <td className="px-4 py-2">{t.slNo}</td>
+                  <td className="px-4 py-2 font-medium">{t.transactionId}</td>
+                  <td className="px-4 py-2 text-gray-700">{t.description}</td>
+                  <td className="px-4 py-2">{t.create}</td>
+                  <td className={`px-4 py-2 font-semibold ${t.paymentType === "Credit" ? "text-green-600" : "text-red-600"}`}>
+                    {t.paymentType}
+                  </td>
+                  <td className={`px-4 py-2 font-semibold ${
+                    t.status === "Success" ? "text-green-600" : t.status === "Pending" ? "text-yellow-600" : "text-red-600"
+                  }`}>
+                    {t.status}
+                  </td>
+                  <td className="px-4 py-2">{t.paymentMethod}</td>
+                  <td className="px-4 py-2 font-medium">${t.amount.toFixed(2)}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
       </div>
     </div>

@@ -87,7 +87,7 @@ export default function TopCustomers() {
               </div>
             </div>
 
-            <span className="font-semibold text-gray-700">{c.amount}</span>
+            <span className="font-semibold text-gray-700"><span className="font-serif">{c.amount}</span></span>
           </div>
         ))}
       </div>

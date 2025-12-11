@@ -32,7 +32,7 @@ const DashboardcardLast = () => {
         {/* Weekly Orders */}
         <div className="bg-white shadow-lg rounded-xl p-6 flex-1 flex flex-col justify-between">
           <div className="flex justify-between items-center">
-            <p className="text-3xl text-gray-700 font-bold">৳ 845k</p>
+            <p className="text-3xl text-gray-700 font-bold"><span className="font-serif">৳</span> 845k</p>
             <p className="text-[#01cdcc] font-semibold">+8.1%</p>
           </div>
           <h3 className="text-xl font-semibold mt-3">Weekly Orders</h3>
@@ -49,7 +49,7 @@ const DashboardcardLast = () => {
         {/* Monthly Earnings */}
         <div className="bg-white shadow-lg rounded-xl p-6 flex-1 flex flex-col justify-between">
           <div className="flex justify-between items-center">
-            <p className="text-3xl text-gray-700 font-bold">৳ 694k</p>
+            <p className="text-3xl text-gray-700 font-bold"><span className="font-serif">৳</span> 694k</p>
             <p className="text-[#01cdcc] font-semibold">+7.2%</p>
           </div>
           <h3 className="text-xl font-semibold mt-3">Monthly Earnings</h3>
@@ -66,7 +66,7 @@ const DashboardcardLast = () => {
         {/* Yearly Earnings */}
         <div className="bg-white shadow-lg rounded-xl p-6 flex-1 flex flex-col justify-between">
           <div className="flex justify-between items-center">
-            <p className="text-3xl text-gray-700 font-bold">৳1038K</p>
+            <p className="text-3xl text-gray-700 font-bold"><span className="font-serif">৳</span> 1038K</p>
             <p className="text-[#01cdcc] font-semibold">+9.2%</p>
           </div>
           <h3 className="text-xl font-semibold mt-3">Yearly Earnings</h3>
@@ -94,7 +94,7 @@ const DashboardcardLast = () => {
                   <p className="text-gray-500 text-sm">{t.method}</p>
                 </div>
               </div>
-              <p className={`font-bold ${t.color}`}>{t.amount}</p>
+              <p className={`font-bold ${t.color}`}><span className="font-serif">{t.amount}</span></p>
             </div>
           ))}
         </div>

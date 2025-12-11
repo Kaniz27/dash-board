@@ -48,6 +48,8 @@ import CourierHistory from "./Components/Payment/CourierHistory";
 import Transactions from "./Components/Payment/Transactions";
 import Bill from "./Components/Payment/Bill";
 import CreateInvoice from "./Components/Payment/CreateInvoice";
+import Register from "./Components/Layout/Register";
+import EditProfile from "./Components/Profile/EditProfile";
 
 
 const router = createBrowserRouter([
@@ -114,6 +116,10 @@ const router = createBrowserRouter([
       },
       // social media
       {
+        path: "/socialmedia",
+        element:<PostGeneration></PostGeneration>,
+      },
+      {
         path: "/socialmedia/post",
         element:<PostGeneration></PostGeneration>,
       },
@@ -138,6 +144,10 @@ const router = createBrowserRouter([
         element:<CallGeneration></CallGeneration>,
       },
       // orderlist
+      {
+        path: "/orders",
+        element:<OrderList></OrderList>
+      },
        {
         path: "/orders/list",
         element:<OrderList></OrderList>
@@ -151,6 +161,10 @@ const router = createBrowserRouter([
         element:<OrderCancel></OrderCancel>
        },
       //  payment
+      {
+        path: "/courier",
+        element:<Couriarlist></Couriarlist>,
+       },
       {
         path: "/courier/list",
         element:<Couriarlist></Couriarlist>,
@@ -229,9 +243,18 @@ const router = createBrowserRouter([
        },
       //  basic setup
       {
+        path: "/setup",
+        element:<Profile></Profile>,
+       },
+      {
         path: "/setup/profile",
         element:<Profile></Profile>,
        },
+        {
+        path: "/edit-profile",
+        element:<EditProfile></EditProfile>,
+       },
+       
        {
         path: "/setup/createuser",
         element:<CreateUsers></CreateUsers>,
@@ -249,6 +272,10 @@ const router = createBrowserRouter([
       {
         path: "/login",
         element:<Login></Login>,
+      },
+       {
+        path: "/register",
+        element:<Register></Register>,
       },
     ],
   },

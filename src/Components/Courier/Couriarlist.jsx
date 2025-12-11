@@ -40,49 +40,46 @@ const CourierList = () => {
 
       {/* Main Content */}
       <div className="ml-64 p-8 w-full">
-        <h1 className="text-3xl font-bold mb-6">Courier List</h1>
-
-        <div className="space-y-4 max-w-6xl mx-auto">
-          {/* Header Row */}
-          <div className="hidden md:flex justify-between bg-gray-200 rounded-lg p-3 font-semibold">
-            <span className="w-1/6 text-left">ID</span>
-            <span className="w-1/5 text-left">Courier Name</span>
-            <span className="w-1/5 text-left">Phone</span>
-            <span className="w-1/6 text-left">Status</span>
-            <span className="w-1/6 text-left">Select</span>
-          </div>
-
-          {couriers.map((c) => (
-            <div
-              key={c.id}
-              className="flex justify-between items-center bg-white rounded-xl shadow-md p-4 border border-gray-200 hover:shadow-lg transition-all"
-            >
-              <span className="w-1/6 text-left font-medium">{c.id}</span>
-              <span className="w-1/5 text-left font-medium">{c.name}</span>
-              <span className="w-1/5 text-left">{c.phone}</span>
-              <span
-                className={`w-1/6 font-semibold ${
-                  c.status === "Active" ? "text-green-600" : "text-red-600"
-                }`}
-              >
-                {c.status}
-              </span>
-              <label className="w-1/6 flex items-center gap-2 cursor-pointer">
-                <input
-                  type="radio"
-                  name="selectCourier"
-                  value={c.id}
-                  checked={selectedCourier === c.id}
-                  onChange={() => setSelectedCourier(c.id)}
-                  className="w-5 h-5 accent-[#01cdcc]"
-                />
-                <span className="text-gray-700">Select</span>
-              </label>
-            </div>
-          ))}
-
-         
+       
+        <div className="overflow-x-auto max-w-6xl mx-auto bg-white rounded-xl shadow-md">
+          <table className="min-w-full divide-y divide-gray-200">
+            <thead className="bg-gray-200">
+              <tr>
+                <th className="px-6 py-3 text-left text-sm font-semibold text-gray-700">ID</th>
+                <th className="px-6 py-3 text-left text-sm font-semibold text-gray-700">Courier Name</th>
+                <th className="px-6 py-3 text-left text-sm font-semibold text-gray-700">Phone</th>
+                <th className="px-6 py-3 text-left text-sm font-semibold text-gray-700">Status</th>
+                <th className="px-6 py-3 text-left text-sm font-semibold text-gray-700">Select</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-gray-200">
+              {couriers.map((c) => (
+                <tr key={c.id} className="hover:bg-gray-50">
+                  <td className="px-6 py-4 whitespace-nowrap font-medium">{c.id}</td>
+                  <td className="px-6 py-4 whitespace-nowrap">{c.name}</td>
+                  <td className="px-6 py-4 whitespace-nowrap">{c.phone}</td>
+                  <td className={`px-6 py-4 whitespace-nowrap font-semibold ${c.status === "Active" ? "text-green-600" : "text-red-600"}`}>
+                    {c.status}
+                  </td>
+                  <td className="px-6 py-4 whitespace-nowrap">
+                    <label className="flex items-center gap-2 cursor-pointer">
+                      <input
+                        type="radio"
+                        name="selectCourier"
+                        value={c.id}
+                        checked={selectedCourier === c.id}
+                        onChange={() => setSelectedCourier(c.id)}
+                        className="w-5 h-5 accent-[#01cdcc]"
+                      />
+                      <span className="text-gray-700">Select</span>
+                    </label>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
+
       </div>
     </div>
   );

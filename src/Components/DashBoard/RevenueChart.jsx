@@ -42,13 +42,13 @@ export default function RevenueChart() {
             <div className="flex gap-8 mt-2">
               <div>
                 <p className="text-gray-500 text-sm">Total Revenue</p>
-                <p className="text-black text-start font-semibold text-xl">৳ 85,24k</p>
-                <p className="font-bold text-lg">৳ {hoverData.revenue.toLocaleString()}</p>
+                <p className="text-black text-start font-semibold text-xl"><span className="font-serif">৳</span>85,24k</p>
+                <p className="font-bold text-lg"><span className="font-serif">৳</span> {hoverData.revenue.toLocaleString()}</p>
               </div>
               <div>
                 <p className="text-gray-500 text-sm">Total Refunds</p>
-                <p className="text-black text-start font-semibold text-xl">৳ 4,125</p>
-                <p className="font-bold text-lg">৳ {hoverData.refunds.toLocaleString()}</p>
+                <p className="text-black text-start font-semibold text-xl"><span className="font-serif">৳</span>4,125</p>
+                <p className="font-bold text-lg"><span className="font-serif">৳</span> {hoverData.refunds.toLocaleString()}</p>
               </div>
             </div>
           </div>

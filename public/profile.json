@@ -1,0 +1,40 @@
+{
+  "status": "success",
+  "status_code": 200,
+  "message": "Profile fetched successfully",
+  "timestamp": "2025-12-11T13:05:00Z",
+  "request_id": "d9f8c3e1-4a2b-47b0-9f8e-123456abcdef",
+  "data": {
+    "id": 123,
+    "first_name": "John",
+    "last_name": "Kanis",
+    "username": "Fatema",
+    "email": "john.doe@example.com",
+    "phone": "+880123456789",
+    "balance": 1500.75,
+    "organization": "Example Corp",
+    "last_login": "2025-12-10T18:30:00Z",
+    "is_verified": true,
+    "date_joined": "2025-01-15T10:20:00Z",
+    "roles": "admin",
+    "avatar": "https://images.pexels.com/photos/3201694/pexels-photo-3201694.jpeg",
+    "preferences": {
+      "language": "en",
+      "timezone": "Asia/Dhaka",
+      "notifications": {
+        "email": true,
+        "sms": false,
+        "push": true
+      }
+    },
+    "subscription": {
+      "plan": "Pro",
+      "expires_at": "2026-01-15T23:59:59Z",
+      "auto_renew": true
+    }
+  },
+  "meta": {
+    "action": "get_profile",
+    "source": "api_v1"
+  }
+}

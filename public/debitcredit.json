@@ -1,94 +1,62 @@
-{
-  "transactions": [
-    {
-      "voucher": "V-001",
-      "date": "2025-12-01",
-      "customer": "Rahim Uddin",
-      "type": "Debit",
-      "amount": 250,
-      "description": "Purchase of office supplies",
-      "status": "Completed"
-    },
-    {
-      "voucher": "V-002",
-      "date": "2025-12-02",
-      "customer": "Sadia Akter",
-      "type": "Credit",
-      "amount": 500,
-      "description": "Payment received",
-      "status": "Completed"
-    },
-    {
-      "voucher": "V-003",
-      "date": "2025-12-03",
-      "customer": "Hasan Ali",
-      "type": "Debit",
-      "amount": 150,
-      "description": "Utility bill payment",
-      "status": "Pending"
-    },
-    {
-      "voucher": "V-004",
-      "date": "2025-12-04",
-      "customer": "Mehedi Hasan",
-      "type": "Debit",
-      "amount": 300,
-      "description": "Purchase of stationery",
-      "status": "Completed"
-    },
-    {
-      "voucher": "V-005",
-      "date": "2025-12-05",
-      "customer": "Jannat Ara",
-      "type": "Credit",
-      "amount": 450,
-      "description": "Invoice payment",
-      "status": "Completed"
-    },
-    {
-      "voucher": "V-006",
-      "date": "2025-12-06",
-      "customer": "Tanjim Ahmed",
-      "type": "Debit",
-      "amount": 200,
-      "description": "Travel expenses",
-      "status": "Pending"
-    },
-    {
-      "voucher": "V-007",
-      "date": "2025-12-07",
-      "customer": "Nusrat Jahan",
-      "type": "Credit",
-      "amount": 350,
-      "description": "Service payment received",
-      "status": "Completed"
-    },
-    {
-      "voucher": "V-008",
-      "date": "2025-12-08",
-      "customer": "Kamal Hossain",
-      "type": "Debit",
-      "amount": 400,
-      "description": "Purchase of equipment",
-      "status": "Completed"
-    },
-    {
-      "voucher": "V-009",
-      "date": "2025-12-09",
-      "customer": "Farzana Mimi",
-      "type": "Credit",
-      "amount": 600,
-      "description": "Invoice payment received",
-      "status": "Completed"
-    },
-    {
-      "voucher": "V-010",
-      "date": "2025-12-10",
-      "customer": "Rafiul Islam",
-      "type": "Debit",
-      "amount": 100,
-      "description": "Office maintenance",
-      "status": "Pending"
-    }
-  ]
-}
+[
+  {
+    "voucher": "VCH-1001",
+    "date": "2025-12-11",
+    "customer": "Kaniz Fatema",
+    "debit": 500,
+    "totalDebit": 500,
+    "voucherType": "Sales",
+    "statusPosted": "Yes",
+    "dueDate": "2025-12-20",
+    "credit": 1250.5,
+    "totalCredit": 2000.5,
+    "amount": 1250.5,
+    "status": "Posted",
+    "action": "View"
+  },
+  {
+    "voucher": "VCH-1002",
+    "date": "2025-12-11",
+    "customer": "Hasib Rahman",
+    "debit": 300,
+    "totalDebit": 300,
+    "voucherType": "Purchase",
+    "statusPosted": "No",
+    "dueDate": "2025-12-25",
+    "credit": 980,
+    "totalCredit": 1280,
+    "amount": 980,
+    "status": "Posted",
+    "action": "View"
+  },
+  {
+    "voucher": "VCH-1003",
+    "date": "2025-12-11",
+    "customer": "Rahim Uddin",
+    "debit": 450,
+    "totalDebit": 450,
+    "voucherType": "Sales",
+    "statusPosted": "Yes",
+    "dueDate": "2025-12-18",
+    "credit": 1500,
+    "totalCredit": 1950,
+    "amount": 1500,
+    "status": "Posted",
+    "action": "View"
+  },
+  {
+    "voucher": "VCH-1004",
+    "date": "2025-12-11",
+    "customer": "Sadia Akter",
+    "debit": 600,
+    "totalDebit": 600,
+    "voucherType": "Purchase",
+    "statusPosted": "No",
+    "dueDate": "2025-12-30",
+    "credit": 1100,
+    "totalCredit": 1700,
+    "amount": 1100,
+    "status": "Posted",
+    "action": "View"
+  }
+]

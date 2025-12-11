@@ -47,7 +47,7 @@ export default function DashBoard({ collapsed }) {
                   <p className="text-gray-500">
                     Here’s a quick look at your store’s performance today. Stay on top of your sales, orders, and customers.
                   </p>
-                  <div className="text-gray-800 font-semibold text-2xl">৳25,56k</div>
+                  <div className="text-gray-800 font-semibold text-2xl"><span className="font-serif">৳</span> 25,56k</div>
                   <div className="text-gray-400 font-medium">
                     Monthly Sales <span className="text-[#01cdcc]">5.2%</span>
                   </div>

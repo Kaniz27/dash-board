@@ -1,31 +1,52 @@
-{
-  "transactions": [
-    {
-      "id": 1,
-      "date": "2025-12-10",
-      "type": "Credit",
-      "amount": 1200,
-      "method": "Wallet",
-      "status": "Success",
-      "description": "Payment received from Rahim"
-    },
-    {
-      "id": 2,
-      "date": "2025-12-10",
-      "type": "Debit",
-      "amount": 500,
-      "method": "Card",
-      "status": "Pending",
-      "description": "Payment to supplier"
-    },
-    {
-      "id": 3,
-      "date": "2025-12-09",
-      "type": "Credit",
-      "amount": 2000,
-      "method": "Bank Transfer",
-      "status": "Success",
-      "description": "Received from Jannat Ara"
-    }
-  ]
-}
+[
+  {
+    "slNo": 1,
+    "transactionId": "TXN-1001",
+    "description": "Payment for invoice INV-1001",
+    "create": "2025-12-01",
+    "paymentType": "Credit",
+    "status": "Success",
+    "paymentMethod": "Credit Card",
+    "amount": 1250.50
+  },
+  {
+    "slNo": 2,
+    "transactionId": "TXN-1002",
+    "description": "Refund for order ORD-102",
+    "create": "2025-12-03",
+    "paymentType": "Debit",
+    "status": "Pending",
+    "paymentMethod": "Bank Transfer",
+    "amount": 980.00
+  },
+  {
+    "slNo": 3,
+    "transactionId": "TXN-1003",
+    "description": "Payment for invoice INV-1003",
+    "create": "2025-12-05",
+    "paymentType": "Credit",
+    "status": "Failed",
+    "paymentMethod": "PayPal",
+    "amount": 1500.75
+  },
+  {
+    "slNo": 4,
+    "transactionId": "TXN-1004",
+    "description": "Payment for invoice INV-1004",
+    "create": "2025-12-07",
+    "paymentType": "Credit",
+    "status": "Success",
+    "paymentMethod": "Bank Transfer",
+    "amount": 750.25
+  },
+  {
+    "slNo": 5,
+    "transactionId": "TXN-1005",
+    "description": "Refund for order ORD-105",
+    "create": "2025-12-09",
+    "paymentType": "Debit",
+    "status": "Pending",
+    "paymentMethod": "Credit Card",
+    "amount": 1200.00
+  }
+]

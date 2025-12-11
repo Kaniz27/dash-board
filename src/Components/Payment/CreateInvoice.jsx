@@ -1,142 +1,81 @@
-import React, { useState } from "react";
+// src/Components/InvoiceTable.jsx
+import React, { useEffect, useState } from "react";
 import Sidebar from "../Sidebar";
+import { FiPlus, FiEdit, FiTrash } from "react-icons/fi";
 
 const CreateInvoice = () => {
-  const [items, setItems] = useState([{ name: "", quantity: 1, price: 0 }]);
-  const [customerName, setCustomerName] = useState("");
-  const [invoiceNumber, setInvoiceNumber] = useState("");
-  const [date, setDate] = useState("");
+  const [invoices, setInvoices] = useState([]);
 
-  const handleItemChange = (index, field, value) => {
-    const updatedItems = [...items];
-    updatedItems[index][field] = field === "quantity" || field === "price" ? Number(value) : value;
-    setItems(updatedItems);
-  };
-
-  const addItem = () => {
-    setItems([...items, { name: "", quantity: 1, price: 0 }]);
-  };
-
-  const removeItem = (index) => {
-    const updatedItems = items.filter((_, i) => i !== index);
-    setItems(updatedItems);
-  };
-
-  const totalAmount = items.reduce((sum, item) => sum + item.quantity * item.price, 0);
+  useEffect(() => {
+    fetch("/public/createvoice.json")
+      .then((res) => res.json())
+      .then((data) => setInvoices(data))
+      .catch((err) => console.error("Error fetching invoices:", err));
+  }, []);
 
   return (
-    <div className="flex min-h-screen bg-gray-100">
+    <div className="flex bg-gray-100 min-h-screen">
       {/* Sidebar */}
       <div className="fixed left-0 top-0 h-full">
         <Sidebar />
       </div>
 
       {/* Main Content */}
-      <div className="ml-64 flex-1 p-8 flex justify-center">
-        <div className="bg-white p-6 rounded-xl shadow-md w-full max-w-4xl">
-          <h1 className="text-2xl font-bold mb-6 text-center">Create Invoice</h1>
-
-          {/* Customer Info */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
-            <input
-              type="text"
-              placeholder="Customer Name"
-              value={customerName}
-              onChange={(e) => setCustomerName(e.target.value)}
-              className="border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#01cdcc]"
-            />
-            <input
-              type="text"
-              placeholder="Invoice Number"
-              value={invoiceNumber}
-              onChange={(e) => setInvoiceNumber(e.target.value)}
-              className="border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#01cdcc]"
-            />
-            <input
-              type="date"
-              value={date}
-              onChange={(e) => setDate(e.target.value)}
-              className="border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#01cdcc]"
-            />
-          </div>
-
-          {/* Items Table */}
-          <div className="overflow-x-auto">
-            <table className="w-full border-collapse mb-4">
-              <thead>
-                <tr className="bg-gray-100">
-                  <th className="border p-2 text-left">Item Name</th>
-                  <th className="border p-2 text-left">Quantity</th>
-                  <th className="border p-2 text-left">Price</th>
-                  <th className="border p-2 text-left">Total</th>
-                  <th className="border p-2 text-left">Action</th>
-                </tr>
-              </thead>
-              <tbody>
-                {items.map((item, index) => (
-                  <tr key={index} className="border-b">
-                    <td className="border p-2">
-                      <input
-                        type="text"
-                        value={item.name}
-                        onChange={(e) => handleItemChange(index, "name", e.target.value)}
-                        className="w-full border border-gray-300 rounded px-2 py-1 focus:outline-none focus:ring-2 focus:ring-[#01cdcc]"
-                      />
-                    </td>
-                    <td className="border p-2">
-                      <input
-                        type="number"
-                        min="1"
-                        value={item.quantity}
-                        onChange={(e) => handleItemChange(index, "quantity", e.target.value)}
-                        className="w-full border border-gray-300 rounded px-2 py-1 focus:outline-none focus:ring-2 focus:ring-[#01cdcc]"
-                      />
-                    </td>
-                    <td className="border p-2">
-                      <input
-                        type="number"
-                        min="0"
-                        value={item.price}
-                        onChange={(e) => handleItemChange(index, "price", e.target.value)}
-                        className="w-full border border-gray-300 rounded px-2 py-1 focus:outline-none focus:ring-2 focus:ring-[#01cdcc]"
-                      />
-                    </td>
-                    <td className="border p-2">{item.quantity * item.price}</td>
-                    <td className="border p-2">
-                      <button
-                        onClick={() => removeItem(index)}
-                        className="bg-red-500 text-white px-2 py-1 rounded hover:bg-red-600"
-                      >
-                        Remove
-                      </button>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-
-          <button
-            onClick={addItem}
-            className="bg-[#01cdcc] text-white px-4 py-2 rounded hover:bg-[#009b9b] mb-4"
-          >
-            Add Item
+      <div className="flex-1 ml-64 p-6 mt-6 border-l border-gray-200">
+        {/* Header with Create New Invoice */}
+        <div className="flex justify-between items-center mb-4 border-b border-gray-200 pb-3">
+          <h2 className="text-2xl font-semibold">Invoices</h2>
+          <button className="flex items-center gap-2 bg-[#01cdcc] text-white px-4 py-2 rounded-lg hover:bg-[#006766]">
+            <FiPlus /> Create New Invoice
           </button>
+        </div>
 
-          {/* Total */}
-          <div className="text-right font-semibold text-lg mb-4">
-            Total Amount: ${totalAmount}
-          </div>
-
-          {/* Actions */}
-          <div className="flex justify-end gap-4">
-            <button className="bg-gray-300 text-gray-700 px-4 py-2 rounded hover:bg-gray-400">
-              Cancel
-            </button>
-            <button className="bg-[#01cdcc] text-white px-4 py-2 rounded hover:bg-[#009b9b]">
-              Save Invoice
-            </button>
-          </div>
+        <div className="overflow-x-auto border border-gray-200 rounded-lg bg-white">
+          <table className="min-w-full">
+            <thead>
+              <tr className="bg-gray-100">
+                <th className="py-2 px-4 border-b border-b-gray-200 text-left">Invoice No.</th>
+                <th className="py-2 px-4 border-b border-b-gray-200 text-left">Customer</th>
+                <th className="py-2 px-4 border-b border-b-gray-200 text-left">Amount</th>
+                <th className="py-2 px-4 border-b border-b-gray-200 text-left">Status</th>
+                <th className="py-2 px-4 border-b border-b-gray-200 text-left">Due Date</th>
+                <th className="py-2 px-4 border-b border-b-gray-200 text-left">Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              {invoices.map((inv) => (
+                <tr key={inv.invoiceNo} className="hover:bg-gray-50">
+                  <td className="py-2 px-4 border-b border-b-gray-200">{inv.invoiceNo}</td>
+                  <td className="py-2 px-4 border-b border-b-gray-200 ">{inv.customer}</td>
+                  <td className="py-2 px-4 border-b border-b-gray-200">${inv.amount.toFixed(2)}</td>
+                  <td
+                    className={`py-2 px-4 border-b border-b-gray-200 font-semibold ${
+                      inv.status === "Paid"
+                        ? "text-green-600"
+                        : inv.status === "Pending"
+                        ? "text-yellow-600"
+                        : "text-red-600"
+                    }`}
+                  >
+                    {inv.status}
+                  </td>
+                  <td className="py-2 px-4 border-b border-b-gray-200">{inv.dueDate}</td>
+                  <td className="py-2 px-4 border-b border-b-gray-200 flex gap-2">
+                    {inv.action.edit && (
+                      <button className="flex items-center gap-1 bg-yellow-100 text-yellow-800 px-2 py-1 rounded hover:bg-yellow-200">
+                        <FiEdit /> Edit
+                      </button>
+                    )}
+                    {inv.action.delete && (
+                      <button className="flex items-center gap-1 bg-red-100 text-red-600 px-2 py-1 rounded hover:bg-red-200">
+                        <FiTrash /> Delete
+                      </button>
+                    )}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
       </div>
     </div>

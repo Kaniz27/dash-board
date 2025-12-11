@@ -34,45 +34,46 @@ const Bill = () => {
       <div className="ml-64 w-full p-8">
         <h1 className="text-3xl font-bold mb-6 text-center">Bill List</h1>
 
-        <div className="space-y-3 max-w-6xl mx-auto">
-          {/* Header */}
-          <div className="flex justify-between bg-gray-200 rounded-lg p-3 font-semibold text-gray-700">
-            <span className="flex-1">Bill ID</span>
-            <span className="flex-1">Customer</span>
-            <span className="flex-1">Date</span>
-            <span className="flex-1">Amount</span>
-            <span className="flex-1">Status</span>
-            <span className="flex-1 text-center">Action</span>
-          </div>
+        <div className="overflow-x-auto max-w-7xl mx-auto bg-white rounded-xl shadow-md">
+          <table className="min-w-full divide-y divide-gray-200">
+            <thead className="bg-gray-200">
+              <tr>
+                <th className="px-6 py-3 text-left text-sm font-semibold text-gray-700">Bill ID</th>
+                <th className="px-6 py-3 text-left text-sm font-semibold text-gray-700">Customer</th>
+                <th className="px-6 py-3 text-left text-sm font-semibold text-gray-700">Date</th>
+                <th className="px-6 py-3 text-left text-sm font-semibold text-gray-700">Amount</th>
+                <th className="px-6 py-3 text-left text-sm font-semibold text-gray-700">Status</th>
+                <th className="px-6 py-3 text-center text-sm font-semibold text-gray-700">Action</th>
+              </tr>
+            </thead>
 
-          {/* Bill Rows */}
-          {bills.map((bill) => (
-            <div
-              key={bill.id}
-              className="flex justify-between items-center bg-white rounded-xl shadow-md p-3 border border-gray-200 hover:shadow-lg transition-all"
-            >
-              <span className="flex-1 font-medium">{bill.id}</span>
-              <span className="flex-1">{bill.customer}</span>
-              <span className="flex-1">{bill.date}</span>
-              <span className="flex-1">${bill.amount}</span>
-              <span
-                className={`flex-1 font-semibold ${
-                  bill.status === "Paid"
-                    ? "text-green-600"
-                    : bill.status === "Pending"
-                    ? "text-yellow-600"
-                    : "text-red-600"
-                }`}
-              >
-                {bill.status}
-              </span>
-              <div className="flex-1 flex justify-center">
-                <button className="text-gray-700 hover:text-[#01cdcc]">
-                  <FiEye size={20} />
-                </button>
-              </div>
-            </div>
-          ))}
+            <tbody className="divide-y divide-gray-200">
+              {bills.map((bill) => (
+                <tr key={bill.id} className="hover:bg-gray-50">
+                  <td className="px-6 py-4 whitespace-nowrap font-medium">{bill.id}</td>
+                  <td className="px-6 py-4 whitespace-nowrap">{bill.customer}</td>
+                  <td className="px-6 py-4 whitespace-nowrap">{bill.date}</td>
+                  <td className="px-6 py-4 whitespace-nowrap">${bill.amount}</td>
+                  <td
+                    className={`px-6 py-4 whitespace-nowrap font-semibold ${
+                      bill.status === "Paid"
+                        ? "text-green-600"
+                        : bill.status === "Pending"
+                        ? "text-yellow-600"
+                        : "text-red-600"
+                    }`}
+                  >
+                    {bill.status}
+                  </td>
+                  <td className="px-6 py-4 whitespace-nowrap text-center">
+                    <button className="text-gray-700 hover:text-[#01cdcc]">
+                      <FiEye size={20} />
+                    </button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
       </div>
     </div>

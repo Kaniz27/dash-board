@@ -1,0 +1,57 @@
+[
+  {
+    "invoiceNo": "INV-1001",
+    "customer": "Kaniz Fatema",
+    "amount": 1250.50,
+    "status": "Paid",
+    "dueDate": "2025-12-15",
+    "action": {
+      "edit": true,
+      "delete": true
+    }
+  },
+  {
+    "invoiceNo": "INV-1002",
+    "customer": "Hasib Rahman",
+    "amount": 980.00,
+    "status": "Pending",
+    "dueDate": "2025-12-20",
+    "action": {
+      "edit": true,
+      "delete": true
+    }
+  },
+  {
+    "invoiceNo": "INV-1003",
+    "customer": "Eleanor Pena",
+    "amount": 1500.75,
+    "status": "Overdue",
+    "dueDate": "2025-12-10",
+    "action": {
+      "edit": true,
+      "delete": true
+    }
+  },
+  {
+    "invoiceNo": "INV-1004",
+    "customer": "Cody Fisher",
+    "amount": 750.25,
+    "status": "Paid",
+    "dueDate": "2025-12-18",
+    "action": {
+      "edit": true,
+      "delete": true
+    }
+  },
+  {
+    "invoiceNo": "INV-1005",
+    "customer": "Jenny Wilson",
+    "amount": 1200.00,
+    "status": "Pending",
+    "dueDate": "2025-12-22",
+    "action": {
+      "edit": true,
+      "delete": true
+    }
+  }
+]

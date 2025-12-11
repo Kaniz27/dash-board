@@ -75,7 +75,7 @@ export default function Header() {
           <div className="flex items-center bg-gradient-to-r from-[#01cdcc] to-[#009b9b] text-white px-3 py-1.5 rounded-xl shadow-md gap-2 min-w-max">
             <div className="flex gap-2 items-center">
               <p className="opacity-80 text-xl font-semibold">Balance</p>
-              <p className="font-normal">${profile.balance}</p>
+              <p className="font-normal"><span className="font-serif">৳</span>{profile.balance}</p>
             </div>
           </div>
         )}

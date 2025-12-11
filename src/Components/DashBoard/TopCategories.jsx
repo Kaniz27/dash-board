@@ -36,7 +36,7 @@ const TopCategories = () => {
                 <p className="text-yellow-500 text-sm">⭐ {c.rating}</p>
               </div>
             </div>
-            <p className="font-semibold">৳{c.price}</p>
+            <p className="font-semibold"><span className="font-serif">৳</span>{c.price}</p>
           </div>
         ))}
       </div>

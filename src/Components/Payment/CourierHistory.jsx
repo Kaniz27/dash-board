@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Sidebar from "../Sidebar";
-import { FiEye } from "react-icons/fi";
+import { FiEye, FiEdit2 } from "react-icons/fi";
 
 const CourierHistory = () => {
   const [history, setHistory] = useState([]);
@@ -25,7 +25,6 @@ const CourierHistory = () => {
 
   return (
     <div className="flex min-h-screen bg-gray-100">
-
       {/* Sidebar */}
       <div className="fixed left-0 top-0 h-full">
         <Sidebar />
@@ -35,46 +34,48 @@ const CourierHistory = () => {
       <div className="ml-64 w-full p-8 mt-10">
         
 
-        <div className="space-y-3 max-w-6xl mx-auto">
+        <div className="overflow-x-auto max-w-7xl mx-auto bg-white rounded-xl shadow-md">
+          <table className="min-w-full divide-y divide-gray-200">
+            <thead className="bg-gray-200">
+              <tr>
+                <th className="px-6 py-3 text-left text-sm font-semibold text-gray-700">Booking ID</th>
+                <th className="px-6 py-3 text-left text-sm font-semibold text-gray-700">Courier Name</th>
+                <th className="px-6 py-3 text-left text-sm font-semibold text-gray-700">Customer</th>
+                <th className="px-6 py-3 text-left text-sm font-semibold text-gray-700">Pickup → Delivery</th>
+                <th className="px-6 py-3 text-left text-sm font-semibold text-gray-700">Items</th>
+                <th className="px-6 py-3 text-left text-sm font-semibold text-gray-700">Status</th>
+                <th className="px-6 py-3 text-center text-sm font-semibold text-gray-700">Action</th>
+              </tr>
+            </thead>
 
-          {/* Header Row */}
-          <div className="flex justify-between bg-gray-200 rounded-lg p-3 font-semibold text-gray-700">
-            <span className="flex-1">Booking ID</span>
-            <span className="flex-1">Courier Name</span>
-            <span className="flex-1">Customer</span>
-            <span className="flex-1">Pickup → Delivery</span>
-            <span className="flex-1">Items</span>
-            <span className="flex-1">Status</span>
-            <span className="flex-1 text-center">Action</span>
-          </div>
-
-          {/* Data Rows */}
-          {history.map((item) => (
-            <div
-              key={item.booking_id}
-              className="flex justify-between items-center bg-white rounded-xl shadow-md p-3 border border-gray-200 hover:shadow-lg transition-all"
-            >
-              <span className="flex-1 font-medium">{item.booking_id}</span>
-              <span className="flex-1">{item.courier_name}</span>
-              <span className="flex-1">{item.customer}</span>
-              <span className="flex-1">{item.pickup} → {item.delivery}</span>
-              <span className="flex-1">{item.items}</span>
-              <span className={`flex-1 font-semibold ${
-                item.status === "Delivered" ? "text-green-600" :
-                item.status === "Pending" ? "text-yellow-600" :
-                item.status === "Shipped" ? "text-blue-600" :
-                "text-red-600"
-              }`}>
-                {item.status}
-              </span>
-              <div className="flex-1 flex justify-center">
-                <button className="text-gray-700 hover:text-[#01cdcc]">
-                  <FiEye size={20} />
-                </button>
-              </div>
-            </div>
-          ))}
-
+            <tbody className="divide-y divide-gray-200">
+              {history.map((item) => (
+                <tr key={item.booking_id} className="hover:bg-gray-50">
+                  <td className="px-6 py-4 whitespace-nowrap font-medium">{item.booking_id}</td>
+                  <td className="px-6 py-4 whitespace-nowrap">{item.courier_name}</td>
+                  <td className="px-6 py-4 whitespace-nowrap">{item.customer}</td>
+                  <td className="px-6 py-4 whitespace-nowrap">{item.pickup} → {item.delivery}</td>
+                  <td className="px-6 py-4 whitespace-nowrap">{item.items}</td>
+                  <td className={`px-6 py-4 whitespace-nowrap font-semibold ${
+                    item.status === "Delivered" ? "text-green-600" :
+                    item.status === "Pending" ? "text-yellow-600" :
+                    item.status === "Shipped" ? "text-blue-600" :
+                    "text-red-600"
+                  }`}>
+                    {item.status}
+                  </td>
+                  <td className="px-6 py-4 whitespace-nowrap text-center flex justify-center gap-3">
+                    <button className="text-gray-700 hover:text-[#01cdcc]">
+                      <FiEye size={20} />
+                    </button>
+                    <button className="text-gray-700 hover:text-[#ff8c00]">
+                      <FiEdit2 size={20} />
+                    </button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
       </div>
     </div>

@@ -1,7 +1,7 @@
 import { useEffect, useState, useRef } from "react";
 import { Link } from "react-router";
 import { FiBell, FiSettings, FiChevronDown } from "react-icons/fi";
-import Logo from "../assets/FL_Logo1.png";
+import Logo from "../assets/Fontliner_Logo.png";
 
 export default function Header() {
   const [profile, setProfile] = useState(null);

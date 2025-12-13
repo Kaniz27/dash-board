@@ -41,7 +41,7 @@ export default function OrderStatisticsCard() {
       {/* Earnings Header */}
       <div className="mt-3 flex items-start justify-between">
         <div>
-          <h1 className="text-3xl font-bold">৳71.5k</h1>
+          <h1 className="text-3xl font-bold"><span className="font-serif">৳</span> 71.5k</h1>
           <p className="text-gray-400 text-sm">Monthly Earnings</p>
         </div>
         <div className="flex items-center gap-1 text-[#01cdcc] text-sm mt-1">
